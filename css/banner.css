@@ -1,0 +1,270 @@
+.banner-slider {
+    width: 100%;
+    margin-top: 70px;
+    
+   
+}
+
+
+.flash-sale-banner {
+    position: relative;
+    max-width: 100%;
+    display: none;
+    transition: transform 0.5s ease;
+    overflow: hidden;
+    
+}
+
+
+
+
+.flash-sale-banner.active {
+    display: block;
+}
+
+/* Banner Image */
+.banner-image {
+    width: 100%;
+    height: auto;
+    display: flex;
+}
+
+/* Text Overlay */
+.banner-content {
+    position: absolute;
+    top: 45%;
+    left: 26%;
+    transform: translate(-50%, -50%);
+    text-align: left;
+    
+    color: #000;
+}
+
+.banner-title {
+    font-size: clamp(1.5rem, 1.8vw, 2.5rem);
+    font-weight: 600;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: flex;
+    /* justify-items: left; */
+    cursor: grab;
+}
+
+.banner-slogan {
+    display: flex;
+    /* justify-content: left; */
+    flex-direction: row;
+    font-size: clamp(2rem, 3.6vw, 4rem);
+    font-weight: 700;
+    margin-bottom: 10px;
+    text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+    cursor: grab;
+
+
+}
+
+.banner-desc {
+    display: flex;
+    /* justify-content: left; */
+    font-size: clamp(1rem, 1.8vw, 1.5rem);
+    font-weight: 500;
+    margin-bottom: 25px;
+    cursor: grab;
+
+}
+
+/* Button Style */
+/* Nút banner hình bình hành */
+.banner-button {
+    display: inline-flex;
+    padding: 12px 30px;
+    background-color: var(--menu);
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    transform: skew(-20deg); /*nghiêng hình bình hành */
+    position: absolute ;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    margin-top: 8px;
+    left: 0;
+    /* border: 2px solid white; */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    justify-content: center;
+    align-items: center;
+
+}
+
+/*bù lại độ nghiêng */
+.banner-button > span {
+    display: inline-flex;
+    transform: skew(20deg);
+}
+
+/* Icon mũi tên */
+.banner-button .ti-arrow-right {
+    margin-left: 8px;
+    transition: transform 0.3s ease;
+}
+
+/* Hiệu ứng hover - màu chạy từ trái qua phải */
+.banner-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background-color: var(--hoverColor);
+    
+    transition: all 0.25s ease;
+    z-index: -1;
+}
+
+.banner-button:hover {
+    color: #000;
+    transform: skew(-20deg) ;
+    
+}
+
+.banner-button:hover::before {
+    left: 0;
+}
+
+/* Icon mũi tên */
+.banner-button .ti-arrow-right {
+    margin-left: 8px;
+    transition: transform 0.3s ease;
+}
+
+.banner-button:hover .ti-arrow-right {
+    transform: translateX(5px);
+    color: #000;
+}
+
+
+/* ///////////////////  */
+/* Navigation arrows */
+.slider-arrow {
+    /* display: none; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    position: absolute;
+    top: 40%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    background: #f5f5f5;
+
+    color: #000;
+    
+    border: none;
+    clip-path: polygon(0 0, 85% 0, 100% 100%, 0 100%);
+    font-size: 20px;
+    cursor: pointer;
+    z-index: 10;
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+
+.prev-arrow {
+    left: -50px;
+}
+
+.next-arrow {
+    right: -50px;
+}
+
+.slider-arrow:hover {
+    background-color: var(--subColor);
+}
+
+.banner-slider:hover .prev-arrow {
+    left: 20px;
+    opacity: 1;
+    visibility: visible;
+}
+
+.banner-slider:hover .next-arrow {
+    right: 20px;
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Dots indicator */
+.slider-dots {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: rgba(255,255,255,0.5);
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.dot.active {
+    background-color: white;
+    width: 24px;
+    border-radius: 6px;
+}
+
+
+/* Hiệu ứng cho text bên trong banner */
+.banner-content > * {
+    opacity: 1;
+    transition: all 0.6s ease;
+}
+
+/* banner active text hiện lên */
+/* .flash-sale-banner.active .banner-content > * {
+    opacity: 1;
+}
+
+.flash-sale-banner.active .banner-title {
+    transition-delay: 0.2s;
+}
+
+.flash-sale-banner.active .banner-slogan {
+    transition-delay: 0.4s;
+}
+
+.flash-sale-banner.active .banner-desc {
+    transition-delay: 0.6s;
+}
+
+.flash-sale-banner.active .banner-button {
+    transition-delay: 0.8s;
+} */
+
+
+/* Responsive Design -------------------------------------------- */
+@media (max-width: 768px) {
+    .banner-title {
+        font-size: 2.5rem;
+    }
+    
+    .banner-slogan {
+        font-size: 1.5rem;
+    }
+    
+    .banner-desc {
+        font-size: 1rem;
+    }
+    
+    .banner-button {
+        padding: 10px 25px;
+        font-size: 1rem;
+    }
+}

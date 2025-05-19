@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Sports Layout</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .grid-container:hover .hover-grow:not(:hover) {
+            filter: brightness(0.8);
+            transition: filter 0.4s ease;
+        }
+        .hover-grow {
+            transition: all 0.4s ease;
+            overflow: hidden;
+        }
+        .hover-grow img {
+            transition: transform 0.5s cubic-bezier(0.25, 0.45, 0.45, 0.95), 
+                        filter 0.4s ease;
+        }
+        .hover-grow:hover img {
+            transform: scale(1.05);
+            filter: brightness(1.1);
+        }
+        .hover-bar {
+            position: relative;
+            display: inline-block;
+        }
+        .hover-bar::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 30%; /* Thanh xanh hiển thị sẵn 30% */
+            height: 3px;
+            background-color: #a2ff00;
+            transition: width 0.4s cubic-bezier(0.65, 0, 0.35, 1);
+            clip-path: polygon(0% 0%, 100% 0%, calc(100% - 4px) 100%, 0% 100%);
+        }
+        .hover-grow:hover .hover-bar::after {
+            width: 85%; /* Khi hover thanh xanh kéo dài 100% */
+        }
+    </style>
+</head>
+<section class="trending-sections bg-gray-100">
+    <div class="max-w-5xl mx-auto py-8">
+        <div class="grid grid-cols-2 gap-4 grid-container">
+            <!-- New Arrivals -->
+            <div class="relative overflow-hidden hover-grow rounded-lg">
+                <img src="/web/Thực tập cơ sở/images/section_gbanner_1.webp" alt="New Arrivals" class="w-full h-full object-cover">
+                <div class="absolute bottom-4 left-4 text-white text-3xl font-bold hover-bar">NEW ARRIVALS</div>
+            </div>
+            <div class="grid grid-cols-2 gap-4">
+                <!-- Now Trending -->
+                <div class="relative overflow-hidden hover-grow rounded-lg">
+                    <img src="/web/Thực tập cơ sở/images/section_gbanner_2.webp" alt="Now Trending" class="w-full h-full object-cover">
+                    <div class="absolute bottom-4 left-4 text-white text-xl font-bold hover-bar">NOW TRENDING</div>
+                </div>
+                <!-- Campaigns -->
+                <div class="relative overflow-hidden hover-grow rounded-lg">
+                    <img src="/web/Thực tập cơ sở/images/section_gbanner_3.webp" alt="Campaigns" class="w-full h-full object-cover">
+                    <div class="absolute bottom-4 left-4 text-white text-xl font-bold hover-bar">CAMPAIGNS</div>
+                </div>
+                <!-- Lookbook -->
+                <div class="relative overflow-hidden hover-grow col-span-2 rounded-lg">
+                    <img src="/web/Thực tập cơ sở/images/section_gbanner_4.webp" alt="Lookbook" class="w-full h-full object-cover">
+                    <div class="absolute bottom-4 left-4 text-white text-xl font-bold hover-bar">LOOKBOOK</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+</html>

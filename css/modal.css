@@ -1,0 +1,103 @@
+/* Modal chung cho tất cả sản phẩm */
+#productOptionsModal .modal-content {
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+/* Style cho thumbnail images */
+.img-thumbnail {
+  cursor: pointer;
+  border-radius: 6px;
+  transition: all 0.3s;
+  object-fit: cover;
+  height: 60px;
+}
+
+.img-thumbnail:hover,
+.img-thumbnail.active {
+  border-color: #ff424e;
+}
+
+/* Style cho quantity selector */
+.quantity-selector {
+  border: 1px solid #dee2e6;
+  border-radius: 6px;
+  padding: 0.5rem 1rem;
+  width: fit-content;
+}
+
+.quantity-selector button {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+.quantity-value {
+  min-width: 30px;
+  text-align: center;
+}
+
+#size-selection {
+  margin-bottom: 0.6rem !important;
+}
+
+.quantity-selector {
+  margin-top: 1.6rem; 
+}
+
+.mb-2 {
+    margin-bottom: .9rem!important;
+}
+
+/* Modal Wishlist  */
+.wishlist-container {
+  max-height: 60vh;
+  overflow-y: auto;
+}
+
+.wishlist-item {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  border-bottom: 1px solid #eee;
+  transition: all 0.3s;
+}
+
+.wishlist-item:hover {
+  background-color: #f9f9f9;
+}
+
+.wishlist-item-img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  margin-right: 1rem;
+}
+
+.wishlist-item-info {
+  flex: 1;
+}
+
+.wishlist-item-title {
+  font-weight: 500;
+  margin-bottom: 0.25rem;
+}
+
+.wishlist-item-price {
+  font-weight: bold;
+  color: #d70018;
+}
+
+.wishlist-item-remove {
+  color: #999;
+  cursor: pointer;
+  font-size: 1.25rem;
+  transition: color 0.2s;
+}
+
+.wishlist-item-remove:hover {
+  color: #d70018;
+}

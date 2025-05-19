@@ -1,0 +1,37 @@
+.trending-sections.bg-white {
+    margin-bottom: 60px;
+}
+.grid-container:hover .hover-grow:not(:hover) {
+    filter: brightness(0.8);
+    transition: filter 0.4s ease;
+}
+.hover-grow {
+    transition: all 0.4s ease;
+    overflow: hidden;
+}
+.hover-grow img {
+    transition: transform 0.5s cubic-bezier(0.25, 0.45, 0.45, 0.95), 
+                filter 0.4s ease;
+}
+.hover-grow:hover img {
+    transform: scale(1.05);
+    filter: brightness(1.1);
+}
+.hover-bar {
+    position: relative;
+    display: inline-block;
+}
+.hover-bar::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 30%; /* Thanh xanh hiển thị sẵn 30% */
+    height: 3px;
+    background-color: #a2ff00;
+    transition: width 0.4s cubic-bezier(0.65, 0, 0.35, 1);
+    clip-path: polygon(0% 0%, 100% 0%, calc(100% - 4px) 100%, 0% 100%);
+}
+.hover-grow:hover .hover-bar::after {
+    width: 85%; /* Khi hover thanh xanh kéo dài 100% */
+}

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cảm ơn bạn đã đặt hàng - Tên Cửa Hàng</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="/web/Thực tập cơ sở/css/menu.css">
+    <link rel="stylesheet" href="/web/Thực tập cơ sở/css/thankyou.css">
+
+    <style>
+        
+    </style>
+</head>
+<body class="bg-gray-50 font-sans text-gray-800">
+
+<!-- Dung tailwind -->
+
+
+<!-- Main Content -->
+<main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="bg-white rounded-xl shadow-lg p-8 max-w-3xl mx-auto text-center">
+        <!-- Animated checkmark -->
+        <svg class="checkmark mb-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+            <circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none"/>
+            <path class="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
+        </svg>
+        
+        <h1 class="text-3xl font-bold text-gray-900 mb-4">Đặt hàng thành công!</h1>
+        <p class="text-lg text-gray-600 mb-8">Cảm ơn bạn đã mua sắm tại cửa hàng chúng tôi</p>
+        
+        <!-- Order Summary -->
+        <div class="order-summary-details"></div>
+        <div class="bg-gray-50 rounded-lg p-6 mb-8 text-left">
+            <h2 class="text-xl font-semibold mb-4 flex items-center">
+                <i class="fas fa-receipt text-primary-600 mr-2"></i>
+                Thông tin đơn hàng
+            </h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                <div>
+                    <p class="text-sm text-gray-500">Mã đơn hàng</p>
+                    <p class="font-medium" id="order-id">DH123456</p>
+                </div>
+                <div>
+                    <p class="text-sm text-gray-500">Ngày đặt hàng</p>
+                    <p class="font-medium" id="order-date">15/05/2023</p>
+                </div>
+                <div>
+                    <p class="text-sm text-gray-500">Phương thức thanh toán</p>
+                    <p class="font-medium" id="payment-method">COD</p>
+                </div>
+                <div>
+                    <p class="text-sm text-gray-500">Tổng thanh toán</p>
+                    <p class="font-bold text-secondary-600" id="order-total">1.830.000đ</p>
+                </div>
+            </div>
+            
+            <div class="border-t pt-4">
+                <h3 class="font-medium mb-2">Sản phẩm đã đặt</h3>
+                <div class="space-y-4" id="order-items">
+                    <!-- Products will be inserted here -->
+                </div>
+            </div>
+        </div>
+        
+        <!-- Customer Info -->
+        <div class="bg-gray-50 rounded-lg p-6 mb-8 text-left">
+            <h2 class="text-xl font-semibold mb-4 flex items-center">
+                <i class="fas fa-user text-primary-600 mr-2"></i>
+                Thông tin khách hàng
+            </h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                    <p class="text-sm text-gray-500">Họ và tên</p>
+                    <p class="font-medium" id="customer-name">Nguyễn Văn A</p>
+                </div>
+                <div>
+                    <p class="text-sm text-gray-500">Số điện thoại</p>
+                    <p class="font-medium" id="customer-phone">0901234567</p>
+                </div>
+                <div class="md:col-span-2">
+                    <p class="text-sm text-gray-500">Địa chỉ nhận hàng</p>
+                    <p class="font-medium" id="customer-address">123 Đường ABC, Quận 1, TP.HCM</p>
+                </div>
+                <div class="md:col-span-2">
+                    <p class="text-sm text-gray-500">Ghi chú</p>
+                    <p class="font-medium" id="customer-note">Giao hàng giờ hành chính</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Actions -->
+        <div class="flex flex-col sm:flex-row justify-center gap-4">
+            <a href="main.html" class="bg-white border border-primary-600 text-primary-600 hover:bg-primary-50 font-medium py-3 px-6 rounded-lg transition-all">
+                <i class="fas fa-home mr-2"></i> Về trang chủ
+            </a>
+            <a href="/products.html" class="bg-primary-600 hover:bg-primary-700 text-white font-medium py-3 px-6 rounded-lg shadow-button transition-all">
+                <i class="fas fa-shopping-bag mr-2"></i> Tiếp tục mua sắm
+            </a>
+        </div>
+        
+        <!-- Order Tracking -->
+        <div class="mt-8 pt-6 border-t">
+            <p class="text-gray-600 mb-4">Bạn có thể theo dõi đơn hàng của mình tại:</p>
+            <a href="/tracking.html" class="inline-flex items-center text-primary-600 hover:text-primary-700 font-medium">
+                <i class="fas fa-truck mr-2"></i> Trang theo dõi đơn hàng
+            </a>
+        </div>
+    </div>
+</main>
+
+<!-- Footer -->
+<footer class="bg-gray-800 text-white py-8">
+    <!-- Same footer as checkout page -->
+</footer>
+
+<script src="/web/Thực tập cơ sở/js/thankyou.js"></script>
+</body>
+</html>
