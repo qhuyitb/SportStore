@@ -30,6 +30,9 @@
             background: linear-gradient(135deg, #ffa00d 50%, #16c0fd 50%);
 }
 
+.cldencam {
+    background: linear-gradient(135deg, #000000 50%, #ffa80a 50%);
+}
 
 
 
@@ -190,7 +193,7 @@
      background-color: var(--menu);
     /* border-radius: 4px; */
     transition: all 0.3s ease;
-    font-size: 1rem;
+    font-size: 1rem !important;
     font-weight: 500;
     transform: skew(-20deg); /*nghiêng hình bình hành */
 
@@ -250,6 +253,7 @@
 }
 
 .deal-slider-arrow {
+    position: relative;
     clip-path: polygon(0 0, 100% 0, 100% 100%, 15% 100%);
     width: 32px;
     height: 32px;
@@ -265,10 +269,22 @@
     font-size: 1rem;
     transition: all 0.3s ease;
 }
+.deal-slider-arrow::after {
+    content: "";
+    position: absolute;
+    top: -2px; /* Độ dày viền */
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    clip-path:  polygon(0 0, 100% 0, 100% 100%, 15% 100%); /* Kế thừa clip-path từ phần tử cha */
+    background: #33333333; /* Màu viền */
+   
+   
+}
 
 .deal-slider-arrow:hover {
     background: var(--subColor);
-    transform: scale(1.1);
+    /* transform: scale(1.1); */
 }
 
 .deal-slider-arrow.disabled {

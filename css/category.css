@@ -21,10 +21,32 @@
 }
 
 .arrow-btn {
-    width: 30px;
-    height: 34px;
+    position: relative;
     clip-path: polygon(0 0, 100% 0, 100% 100%, 15% 100%);
+    width: 32px;
+    height: 32px;
+    background: white;
+    border: none;
+    /* border-radius: 50%; */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    cursor: pointer;
     
+    color: #000;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    
+}
+.arrow-btn::after {
+    content: "";
+    position: absolute;
+    top: -2px; /* Độ dày viền */
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    clip-path: inherit; /* Kế thừa clip-path từ phần tử cha */
+    background: #33333333; /* Màu viền */
+   
+   
 }
 .arrow-btn:hover {
     background-color: var(--subColor);

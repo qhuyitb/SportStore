@@ -18,7 +18,7 @@
     filter: brightness(1.1);
 }
 .hover-bar {
-    position: relative;
+    /* position: relative; */
     display: inline-block;
 }
 .hover-bar::after {

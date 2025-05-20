@@ -15,7 +15,7 @@ body {
 .testimonial-section {
     position: relative;
     width: 100%;
-    margin: 40px auto;
+    margin: 80px auto;
     height: auto;
 
     background: url('../images/section_feedback_bg.webp');
@@ -34,6 +34,7 @@ body {
 }
 
 .testimonial-section-header h2 {
+    padding-top: 25px;
     font-size: 2rem;
     color: var(--light-color);
     margin-bottom: 10px;
@@ -45,7 +46,7 @@ body {
     content: '';
     width: 12%;
     height: 4px;
-    background: var(--secondary-color);
+    background: #a2ff00;
     display: flex;
     /* margin: 15px auto 0; */
     margin-top: 12px;
@@ -171,8 +172,8 @@ body {
 }
 
 .nav-button:hover {
-    background: var(--secondary-color);
-    color: white;
+    background: #86dc44;
+    color: #000;
     transform: translateY(-50%) scale(1.1);
 }
 
@@ -183,7 +184,7 @@ body {
 }
 
 .next-button {
-    right: 48px;
+    right: 70px;
     top: -34px;
 }
 
