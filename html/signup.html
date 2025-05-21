@@ -17,7 +17,7 @@
         }
         
         body {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background-color: rgba(255, 255, 255, 0.9);
             height: 100vh;
             display: flex;
             justify-content: center;
@@ -191,9 +191,7 @@
                 <div class="password-container">
                     <input type="password" id="password" required placeholder=" ">
                     <label for="password">Mật khẩu</label>
-                    <span class="toggle-password" id="togglePassword">
-                        <i class="fas fa-eye-slash"></i>
-                    </span>
+                    
                 </div>
             </div>
             
@@ -201,9 +199,7 @@
                 <div class="password-container">
                     <input type="password" id="confirm-password" required placeholder=" ">
                     <label for="confirm-password">Nhập lại mật khẩu</label>
-                    <span class="toggle-password" id="toggleConfirmPassword">
-                        <i class="fas fa-eye-slash"></i>
-                    </span>
+                    
                 </div>
             </div>
             
@@ -215,32 +211,119 @@
             <button type="submit" class="register-button">ĐĂNG KÝ</button>
             
             <div class="login-link">
-                Đã có tài khoản? <a href="#">Đăng nhập ngay</a>
+                Đã có tài khoản? <a href="/web/Thực tập cơ sở/html/login.html">Đăng nhập ngay</a>
             </div>
         </form>
     </div>
 
     <script>
-        // Toggle password visibility
-        const togglePassword = document.getElementById('togglePassword');
-        const passwordInput = document.getElementById('password');
-        const toggleConfirmPassword = document.getElementById('toggleConfirmPassword');
-        const confirmPasswordInput = document.getElementById('confirm-password');
-        
-        togglePassword.addEventListener('click', function() {
-            const icon = this.querySelector('i');
-            const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
-            passwordInput.setAttribute('type', type);
-            icon.classList.toggle('fa-eye-slash');
-            icon.classList.toggle('fa-eye');
+       
+        // Password strength indicator
+        passwordInput.addEventListener('input', function() {
+            const strengthBar = document.getElementById('strengthBar');
+            const password = this.value;
+            let strength = 0;
+            
+            // Kiểm tra độ dài
+            if (password.length >= 8) strength += 1;
+            
+            // Kiểm tra chữ hoa
+            if (/[A-Z]/.test(password)) strength += 1;
+            
+            // Kiểm tra số
+            if (/[0-9]/.test(password)) strength += 1;
+            
+            // Kiểm tra ký tự đặc biệt
+            if (/[^A-Za-z0-9]/.test(password)) strength += 1;
+            
+            // Cập nhật thanh strength
+            switch(strength) {
+                case 0:
+                    strengthBar.style.width = '0%';
+                    strengthBar.style.background = '#ff4444';
+                    break;
+                case 1:
+                    strengthBar.style.width = '25%';
+                    strengthBar.style.background = '#ff4444';
+                    break;
+                case 2:
+                    strengthBar.style.width = '50%';
+                    strengthBar.style.background = '#ffbb33';
+                    break;
+                case 3:
+                    strengthBar.style.width = '75%';
+                    strengthBar.style.background = '#00C851';
+                    break;
+                case 4:
+                    strengthBar.style.width = '100%';
+                    strengthBar.style.background = '#00C851';
+                    break;
+            }
         });
         
-        toggleConfirmPassword.addEventListener('click', function() {
-            const icon = this.querySelector('i');
-            const type = confirmPasswordInput.getAttribute('type') === 'password' ? 'text' : 'password';
-            confirmPasswordInput.setAttribute('type', type);
-            icon.classList.toggle('fa-eye-slash');
-            icon.classList.toggle('fa-eye');
+        // Form validation
+        document.getElementById('registerForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            let isValid = true;
+            
+            // Validate name
+            const name = document.getElementById('fullname').value;
+            if (name.trim() === '' || name.length < 3) {
+                document.getElementById('nameError').style.display = 'block';
+                document.getElementById('fullname').classList.add('error');
+                isValid = false;
+            } else {
+                document.getElementById('nameError').style.display = 'none';
+                document.getElementById('fullname').classList.remove('error');
+            }
+            
+            // Validate email
+            const email = document.getElementById('email').value;
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                document.getElementById('emailError').style.display = 'block';
+                document.getElementById('email').classList.add('error');
+                isValid = false;
+            } else {
+                document.getElementById('emailError').style.display = 'none';
+                document.getElementById('email').classList.remove('error');
+            }
+            
+            // Validate password
+            const password = document.getElementById('password').value;
+            if (password.length < 8) {
+                document.getElementById('passwordError').style.display = 'block';
+                document.getElementById('password').classList.add('error');
+                isValid = false;
+            } else {
+                document.getElementById('passwordError').style.display = 'none';
+                document.getElementById('password').classList.remove('error');
+            }
+            
+            // Validate confirm password
+            const confirmPassword = document.getElementById('confirmPassword').value;
+            if (password !== confirmPassword) {
+                document.getElementById('confirmPasswordError').style.display = 'block';
+                document.getElementById('confirmPassword').classList.add('error');
+                isValid = false;
+            } else {
+                document.getElementById('confirmPasswordError').style.display = 'none';
+                document.getElementById('confirmPassword').classList.remove('error');
+            }
+            
+            // Validate terms
+            if (!document.getElementById('agreeTerms').checked) {
+                alert('Vui lòng đồng ý với điều khoản dịch vụ');
+                isValid = false;
+            }
+            
+            // If all valid, submit form
+            if (isValid) {
+                alert('Đăng ký thành công!');
+                // Thực tế bạn sẽ gửi form đến server ở đây
+                // this.submit();
+            }
         });
     </script>
 </body>
