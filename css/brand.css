@@ -1,0 +1,196 @@
+:root {
+    --pri-color: #ff6b6b;
+    --secondary-color: #4ecdc4;
+    --dark-color: #1a1a1a;
+    --light-color: #ffffff;
+}
+
+.brand-section {
+    position: relative;
+    width: 100%;
+    margin: 80px auto;
+    padding: 30px 0;
+    overflow: hidden;
+}
+
+.brand-section-header {
+    margin-bottom: 30px;
+    padding: 0 30px;
+    text-align: center;
+}
+
+.brand-section-header h2 {
+    font-size: 1.8rem;
+    color: #333333;
+    margin-bottom: 10px;
+    position: relative;
+    display: inline-block;
+    font-weight: 600;
+}
+
+.brand-section-header h2::after {
+    content: '';
+    width: 100%;
+    height: 4px;
+    background: #a2ff00;
+    display: block;
+    clip-path: polygon(0% 0%, 100% 0%, calc(100% - 4px) 100%, 0% 100%);
+    margin-top: 12px;
+    border-radius: 2px;
+}
+
+.brand-section-header p {
+    font-size: 1.1rem;
+    color: #333333;
+    max-width: 80%;
+    margin: 0 auto;
+}
+
+.brand-slider {
+    position: relative;
+    width: 100%;
+    padding: 0 50px;
+}
+
+.brand-container {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding: 20px 10px;
+    margin-bottom: 30px;
+    scrollbar-width: none; /* Ẩn thanh scroll trên Firefox */
+    -ms-overflow-style: none; /* Ẩn thanh scroll trên IE/Edge */
+}
+
+.brand-container::-webkit-scrollbar {
+    display: none; /* Ẩn thanh scroll trên Chrome/Safari */
+}
+
+.brand-logo {
+    min-width: 150px;
+    max-width: 180px;
+    height: 100px;
+    background: white;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.brand-logo:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.brand-logo img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    filter: grayscale(30%);
+    transition: filter 0.3s ease;
+}
+
+.brand-logo:hover img {
+    filter: grayscale(0%);
+}
+
+.slider-brand-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+    transition: all 0.3s ease;
+    font-size: 1.2rem;
+    color: var(--dark-color);
+}
+
+.slider-brand-nav:hover {
+    background: #86dc44;
+    color: white;
+    transform: translateY(-50%) scale(1.1);
+}
+
+.prev-brand-btn {
+    left: 5px;
+}
+
+.next-brand-btn {
+    right: 5px;
+}
+
+
+
+@media (max-width: 768px) {
+    .brand-section {
+        padding: 20px 0 60px;
+    }
+    
+    .brand-section-header h2 {
+        font-size: 1.5rem;
+    }
+    
+    .brand-section-header p {
+        font-size: 0.9rem;
+        max-width: 90%;
+    }
+    
+    .brand-slider {
+        padding: 0 40px;
+    }
+    
+    .brand-logo {
+        min-width: 120px;
+        height: 80px;
+        padding: 10px;
+    }
+    
+    .slider-brand-nav {
+        width: 35px;
+        height: 35px;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .brand-slider {
+        padding: 0 30px;
+    }
+    
+    .brand-logo {
+        min-width: 100px;
+        height: 60px;
+        padding: 8px;
+    }
+    
+    .slider-brand-nav {
+        width: 30px;
+        height: 30px;
+    }
+}
+
+.slider-brand-nav.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    pointer-events: none;
+    background: #cccccc !important;
+}
+
+.slider-brand-nav.disabled:hover {
+    transform: translateY(-50%) !important;
+    background: #cccccc !important;
+}

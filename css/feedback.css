@@ -1,16 +1,11 @@
 :root {
-    --primary-color: #ff6b6b;
+    --pri-color: #ff6b6b;
     --secondary-color: #4ecdc4;
     --dark-color: #1a1a1a;
     --light-color: #ffffff;
 }
 
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f3f3f3;
-}
+
 
 .testimonial-section {
     position: relative;
@@ -35,7 +30,7 @@ body {
 
 .testimonial-section-header h2 {
     padding-top: 25px;
-    font-size: 2rem;
+    font-size: 1.8rem;
     color: var(--light-color);
     margin-bottom: 10px;
     position: relative;
@@ -44,6 +39,7 @@ body {
 
 .testimonial-section-header h2::after {
     content: '';
+    clip-path: polygon(0% 0%, 100% 0%, calc(100% - 4px) 100%, 0% 100%);
     width: 12%;
     height: 4px;
     background: #a2ff00;
@@ -119,20 +115,20 @@ body {
 
 .client-details h4 {
     margin: 0;
-    font-size: 1.1rem; /* Giảm font size */
-    color: var(--primary-color);
+    font-size: 1.13rem; /* Giảm font size */
+    color: var(--pri-color);
 }
 
 .client-details p {
     margin: 5px 0 0;
-    font-size: 0.9rem;
+    font-size: 0.95rem;
     color: #666;
 }
 
 .testimonial-text {
     font-style: italic;
     color: #444;
-    font-size: 0.95rem; /* Giảm font size */
+    font-size: 1.02rem; /* Giảm font size */
     line-height: 1.4; /* Điều chỉnh line height */
 }
 
@@ -141,7 +137,7 @@ body {
     bottom: 8px;
     left: 50%;
     transform: translateX(-50%);
-    background: var(--primary-color);
+    background: var(--pri-color);
     color: white;
     padding: 10px 30px;
     border-radius: 25px;
@@ -155,10 +151,12 @@ body {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    width: 50px;
-    height: 50px;
+    width: 35px;
+    height: 35px;
     background: rgba(255, 255, 255, 0.9);
-    border-radius: 50%;
+    /* border-radius: 50%; */
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 15% 100%);
+
     display: flex;
     align-items: center;
     justify-content: center;
@@ -178,7 +176,7 @@ body {
 }
 
 .prev-button {
-    right: 150px;
+    right: 130px;
    top: -34px;
 
 }

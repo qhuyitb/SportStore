@@ -1,0 +1,134 @@
+.new-wrapper {
+    padding: 10px 45px;
+    margin-bottom: 80px;
+    
+}
+
+.news-header h1 {
+    position: relative;
+    color: #333333;
+    font-family: 'Oswald', sans-serif;
+    font-size: 28.8px;
+    font-weight: 600;
+    margin-bottom: 25px;
+    padding-bottom: 10px;
+    
+}
+.news-header h1::after {
+    content: '';
+    width: 7%;
+    height: 4px;
+    background: #a2ff00;
+    display: flex;
+    clip-path: polygon(0% 0%, 100% 0%, calc(100% - 4px) 100%, 0% 100%);
+    /* margin: 15px auto 0; */
+    margin-top: 12px;
+    border-radius: 2px;
+    padding-left: 15px;
+    
+
+}
+
+
+.news-container {
+    display: flex;
+    
+    gap: 20px;
+    
+    scroll-behavior: smooth;
+    overflow-x: auto;
+    scrollbar-width: none;
+}
+.news-img img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 5px;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+    
+    
+}
+.news-img:hover img {
+    transform: scale(1.05); /* phóng to 5% */
+}
+
+.news-img {
+
+    position: relative;
+}
+
+
+.news-item {
+    flex: 0 0 calc(25% - 20px);
+    min-width: 250px;
+    
+    
+    padding: 15px;
+    
+    border-radius: 5px;
+}
+
+.news-date {
+    position: absolute;
+    bottom : 0px;
+    left: 0px;
+    
+        
+    padding: 4px 20px 3px 12px;
+    color: var(--textColor);
+    background: #fff;
+    font-size: 0.9rem;
+}
+
+.news-title {
+    color: #333333;
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0 0 10px 0;
+    padding-top: 10px;
+    min-height: 54px ;
+  
+    /* line-height: 22px; */
+}
+
+.news-content {
+    font-size: 15px;
+    margin-bottom: 12px;
+    color: #444;
+    max-height: 80px;       /* Giới hạn chiều cao */
+    overflow: hidden;       /* Ẩn phần vượt quá */
+    text-overflow: ellipsis; /* Thêm dấu "..." nếu bị cắt */
+    display: -webkit-box;
+    -webkit-line-clamp: 3;   /* Số dòng tối đa (tùy vào line-height) */
+    -webkit-box-orient: vertical;
+    line-clamp: 3;
+}
+
+@media (max-width: 1200px) {
+    .news-item {
+        flex: 0 0 calc(33.333% - 15px);
+    }
+}
+
+@media (max-width: 992px) {
+    .new-wrapper {
+        padding: 0 20px;
+    }
+    
+    .news-slider-control {
+        right: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .news-item {
+        flex: 0 0 calc(50% - 10px);
+    }
+}
+
+@media (max-width: 576px) {
+    .news-item {
+        flex: 0 0 100%;
+    }
+}
