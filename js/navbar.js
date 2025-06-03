@@ -193,7 +193,7 @@ function updateCartPopup() {
         <div class="cart-item-details">
           <div class="cart-item-title">${item.name}</div>
           <div class="cart-item-variant">
-            Size: ${item.size} | Màu: ${item.color || 'Đen'}
+            Size: ${item.size} 
           </div>
           <div class="cart-item-price">${formatPrice(item.price)}đ</div>
           <div class="cart-item-actions">

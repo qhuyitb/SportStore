@@ -220,7 +220,7 @@ document.getElementById('confirmCheckout').addEventListener('click', function() 
     const btn = this;
     
     // Validate form
-    const fullname = document.getElementById('fullname').value.trim();
+    const fullname = document.getElementById('fullNameDisplay');
     const phone = document.getElementById('phone').value.trim();
     const address = document.getElementById('address').value.trim();
     const note = document.getElementById('note').value.trim();
@@ -252,9 +252,56 @@ document.getElementById('confirmCheckout').addEventListener('click', function() 
     const shippingFee = currentVoucher?.type === 'freeship' ? 0 : currentShipping.fee;
     const total = subtotal - discount + shippingFee;
     
+
+//  start history   
+// Lấy ra name và quantity từ giỏ hàng
+const cartItems = cart.map(item => ({
+    name: item.name,
+    quantity: item.quantity
+}));
+
+// Lấy số thứ tự đơn hàng cuối cùng từ localStorage, nếu chưa có thì bắt đầu từ 1
+let lastOrderNumber = localStorage.getItem('lastOrderNumber');
+if (!lastOrderNumber) lastOrderNumber = 1;
+else lastOrderNumber = parseInt(lastOrderNumber) + 1;
+
+// Tạo orderId từ số tăng dần
+const orderId = 'DH' + String(lastOrderNumber).padStart(6, '0');  // Ví dụ: DH000001, DH000002
+const username = localStorage.getItem('username');
+
+// Lưu lại số thứ tự mới để lần sau tăng tiếp
+localStorage.setItem('lastOrderNumber', lastOrderNumber);
+
+// Tạo dữ liệu đơn hàng
+const historyData = {
+    username: username,
+    orderId: orderId,
+    orderDate: new Date().toISOString(),
+    total: total,
+    cartItems: cartItems,
+    shippingMethod: currentShipping.method,
+    paymentMethod: paymentMethod
+};
+
+// In ra từng sản phẩm trong đơn hàng
+historyData.cartItems.forEach(item => {
+    console.log(`${item.name} - SL: ${item.quantity}`);
+});
+
+// In ra toàn bộ đơn hàng
+console.log(historyData);
+fetch('http://localhost:3000/api/checkout', {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json'
+  },
+  body: JSON.stringify(historyData)
+});
+
+// end history 
     // Tạo thông tin đơn hàng
     const orderData = {
-        orderId: 'DH' + Math.floor(Math.random() * 1000000),
+        orderId: orderId,
         orderDate: new Date().toISOString(),
         customerInfo: { fullname, phone, address, note },
         paymentMethod,
@@ -267,10 +314,12 @@ document.getElementById('confirmCheckout').addEventListener('click', function() 
         total,
         status: 'pending'
     };
-    
+// Lưu đơn hàng
+localStorage.setItem('currentOrder', JSON.stringify(orderData));
+
     // Lưu thông tin đơn hàng vào localStorage
     localStorage.setItem('currentOrder', JSON.stringify(orderData));
-    
+    console.log('Order đã lưu:', orderData);
     // Xóa giỏ hàng
     cart = [];
     localStorage.setItem('cart', JSON.stringify(cart));
@@ -304,5 +353,4 @@ tailwind.config = {
                 }
             }
         }
-
 

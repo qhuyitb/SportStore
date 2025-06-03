@@ -1,4 +1,5 @@
 // Countdown Timer 
+
 document.addEventListener('DOMContentLoaded', function() {
     const timerNumbers = document.querySelectorAll('.timer-number');
     let days = 587, hours = 10, minutes = 29, seconds = 37;

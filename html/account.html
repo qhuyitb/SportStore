@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thông Tin Tài Khoản - SportShop</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background:  #D1D5DB;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .header {
+            background:  #2c3e50;
+            padding: 30px;
+            color: white;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .header p {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+
+        .main-content {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            min-height: 600px;
+        }
+
+        .sidebar {
+            background: #f8f9fa;
+            padding: 30px 20px;
+            border-right: 1px solid #e9ecef;
+        }
+
+        .user-info {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 20px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+            color: white;
+            font-size: 2em;
+        }
+
+        .menu-item {
+            display: block;
+            padding: 15px 20px;
+            margin: 5px 0;
+            text-decoration: none;
+            color: #495057;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .menu-item:hover, .menu-item.active {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            transform: translateX(5px);
+        }
+
+        .menu-item i {
+            margin-right: 10px;
+            width: 20px;
+        }
+
+        .content-area {
+            padding: 30px;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .section-title {
+            font-size: 1.8em;
+            color: #333;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #667eea;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #495057;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #e9ecef;
+            border-radius: 10px;
+            font-size: 1em;
+            transition: all 0.3s ease;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+
+        .btn {
+            padding: 12px 25px;
+            border: none;
+            border-radius: 25px;
+            font-size: 1em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+        }
+
+        .btn-secondary {
+            background: #6c757d;
+            color: white;
+        }
+
+        .btn-danger {
+            background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+            color: white;
+        }
+
+        .order-card {
+            background: white;
+            border: 1px solid #e9ecef;
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .order-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .order-header {
+            display: flex;
+            justify-content: between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .order-id {
+            font-weight: bold;
+            color: #667eea;
+        }
+
+        .order-status {
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: 600;
+        }
+
+        .status-completed {
+            background: #d4edda;
+            color: #155724;
+        }
+
+        .status-processing {
+            background: #fff3cd;
+            color: #856404;
+        }
+
+        .status-shipped {
+            background: #cce5ff;
+            color: #004085;
+        }
+
+        .address-card {
+            background: #f8f9fa;
+            border: 2px solid #e9ecef;
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 15px;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .address-card:hover {
+            border-color: #667eea;
+        }
+
+        .address-card.default {
+            border-color: #28a745;
+            background: #f0fff4;
+        }
+
+        .default-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: #28a745;
+            color: white;
+            padding: 3px 8px;
+            border-radius: 10px;
+            font-size: 0.8em;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+        }
+
+        .stat-number {
+            font-size: 2.5em;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .stat-label {
+            font-size: 1em;
+            opacity: 0.9;
+        }
+
+        @media (max-width: 768px) {
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+
+            .sidebar {
+                border-right: none;
+                border-bottom: 1px solid #e9ecef;
+            }
+
+            .header h1 {
+                font-size: 2em;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="result"></div>
+    <div class="container">
+        <div class="header">
+            <img src="../images/logo.webp" alt="Logo">
+            <p>Quản lý tài khoản</p>
+        </div>
+
+        <div class="main-content">
+            <div class="sidebar">
+                <div class="user-info">
+                    <div class="avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <!-- <h3 id="userName" id="userNameDisplay" style="font-size: 14px;"></span>">Nguyễn Văn Nam</h3> -->
+                     <!-- id="fullName"  -->
+                     <span id="fullNameDisplay1" style="font-size: 14px;"></span>
+                </div>
+
+                <a href="#" class="menu-item active" onclick="showTab('profile')">
+                    <i class="fas fa-user-edit"></i> Thông tin cá nhân
+                </a>
+                <a href="#" class="menu-item" onclick="showTab('orders')">
+                    <i class="fas fa-shopping-bag"></i> Đơn hàng của tôi
+                </a>
+                <!-- <a href="#" class="menu-item" onclick="showTab('addresses')">
+                    <i class="fas fa-map-marker-alt"></i> Địa chỉ giao hàng
+                </a> -->
+                <a href="#" class="menu-item" onclick="showTab('changepassword')">
+                    <i class="fas fa-lock"></i> Đổi mật khẩu
+                </a>
+                <a href="#" class="menu-item" onclick="showTab('notifications')">
+                    <i class="fas fa-bell"></i> Thông báo
+                </a>
+                <a href="#" class="menu-item" onclick="logout()">
+                    <i class="fas fa-sign-out-alt"></i> Quay lại
+                </a>
+            </div>
+
+            <div class="content-area">
+                <!-- Tab Thông tin cá nhân -->
+                <div id="profile" class="tab-content active">
+                    <h2 class="section-title">Thông tin cá nhân</h2>
+                    
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-number">25</div>
+                            <div class="stat-label">Đơn hàng</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">15M</div>
+                            <div class="stat-label">Tổng chi tiêu</div>
+                        </div>
+                        <!-- <div class="stat-card">
+                            <div class="stat-number">120</div>
+                            <div class="stat-label">Điểm tích lũy</div>
+                        </div> -->
+                    </div>
+
+                    <form id="profileForm">
+                        <!-- <div class="form-group">
+                            <label>Họ và tên</label>
+                            <input type="text" class="form-control" id="fullname" value="Nguyễn Văn Nam"> 
+                             <input type="text" class="form-control" id="fullName">
+                        </div>
+                         -->
+                        <div class="form-group">
+                            <label>Họ và tên</label>
+                            <div class="form-control" id="fullNameDisplay"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Email</label>
+                            <!-- <input type="email" class="form-control" id="email" value="nam.nguyen@email.com"> -->
+                             <!-- <input type="email" class="form-control" id="email"> -->
+                            <div class="form-control" id="usernameDisplay"></div>
+
+                        </div>
+                        <div class="form-group">
+                            <label>Số điện thoại</label>
+                            <input type="tel" class="form-control" id="phone">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Ngày sinh</label>
+                            <input type="date" class="form-control" id="birthday">
+                        </div>
+
+                        <div class="form-group">
+                         <label>Giới tính</label>
+                            <select class="form-control" id="gender">
+                             <option value="male">Nam</option>
+                              <option value="female">Nữ</option>
+                                <option value="other">Khác</option>
+                            </select>
+                        </div>
+
+                        <!-- <div class="form-group">
+                            <label>Số điện thoại</label>
+                            <input type="tel" class="form-control" id="phone" value="0123456789">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Ngày sinh</label>
+                            <input type="date" class="form-control" id="birthday" value="1990-01-01">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Giới tính</label>
+                            <select class="form-control" id="gender">
+                                <option value="male" selected>Nam</option>
+                                <option value="female">Nữ</option>
+                                <option value="other">Khác</option>
+                            </select>
+                        </div> -->
+                        
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-save"></i> Cập nhật thông tin
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Tab Đơn hàng -->
+                 <div id="orders" class="tab-content">
+                    <h2 class="section-title">Đơn hàng của tôi</h2>
+                   <div id="orders-container"></div>
+                </div>
+
+                <!-- <div id="orders" class="tab-content">
+                    <h2 class="section-title">Đơn hàng của tôi</h2>
+                    <div class="order-card">
+    <div class="order-header">
+        <div>
+            <div class="order-id">#DH001234</div>
+            <div>Ngày đặt: 20/05/2025</div>
+        </div>
+        <div class="order-methods">
+            <div><strong>Vận chuyển:</strong> Giao hàng nhanh</div>
+            <div><strong>Thanh toán:</strong> Ví điện tử Momo</div>
+        </div>
+    </div>
+    <div class="order-details">
+        <p><strong>Sản phẩm:</strong> Giày Nike Air Max 270 (x1), Áo thể thao Adidas (x2)</p>
+        <p><strong>Tổng tiền:</strong> 2,500,000 VNĐ</p>
+    </div>
+</div>
+
+<div class="order-card">
+    <div class="order-header">
+        <div>
+            <div class="order-id">#DH001235</div>
+            <div>Ngày đặt: 25/05/2025</div>
+        </div>
+        <div class="order-methods">
+            <div><strong>Vận chuyển:</strong> Giao hàng tiết kiệm</div>
+            <div><strong>Thanh toán:</strong> Thanh toán khi nhận hàng</div>
+        </div>
+    </div>
+    <div class="order-details">
+        <p><strong>Sản phẩm:</strong> Quần short Nike Dri-FIT (x1)</p>
+        <p><strong>Tổng tiền:</strong> 750,000 VNĐ</p>
+    </div>
+</div>
+
+<div class="order-card">
+    <div class="order-header">
+        <div>
+            <div class="order-id">#DH001236</div>
+            <div>Ngày đặt: 28/05/2025</div>
+        </div>
+        <div class="order-methods">
+            <div><strong>Vận chuyển:</strong> Giao hàng tiêu chuẩn</div>
+            <div><strong>Thanh toán:</strong> Thẻ tín dụng</div>
+        </div>
+    </div>
+    <div class="order-details">
+        <p><strong>Sản phẩm:</strong> Balo thể thao Puma (x1)</p>
+        <p><strong>Tổng tiền:</strong> 1,200,000 VNĐ</p>
+    </div>
+</div> -->
+
+                    <!-- <div class="order-card">
+                        <div class="order-header">
+                            <div>
+                                <div class="order-id">#DH001234</div>
+                                <div>Ngày đặt: 20/05/2025</div>
+                            </div>
+                            <div class="order-status status-completed">Hoàn thành</div>
+                        </div>
+                        <div class="order-details">
+                            <p><strong>Sản phẩm:</strong> Giày Nike Air Max 270, Áo thể thao Adidas</p>
+                            <p><strong>Tổng tiền:</strong> 2,500,000 VNĐ</p> -->
+                            <!-- <p><strong>Địa chỉ giao hàng:</strong> 123 Đường ABC, Quận 1, TP.HCM</p> -->
+                        <!-- </div>
+                    </div>
+
+                    <div class="order-card">
+                        <div class="order-header">
+                            <div>
+                                <div class="order-id">#DH001235</div>
+                                <div>Ngày đặt: 25/05/2025</div>
+                            </div>
+                            <div class="order-status status-shipped">Đang giao</div>
+                        </div>
+                        <div class="order-details">
+                            <p><strong>Sản phẩm:</strong> Quần short Nike Dri-FIT</p>
+                            <p><strong>Tổng tiền:</strong> 750,000 VNĐ</p> -->
+                            <!-- <p><strong>Địa chỉ giao hàng:</strong> 456 Đường XYZ, Quận 3, TP.HCM</p> -->
+                        <!-- </div>
+                    </div>
+
+                    <div class="order-card">
+                        <div class="order-header">
+                            <div>
+                                <div class="order-id">#DH001236</div>
+                                <div>Ngày đặt: 28/05/2025</div>
+                            </div>
+                            <div class="order-status status-processing">Đang xử lý</div>
+                        </div>
+                        <div class="order-details">
+                            <p><strong>Sản phẩm:</strong> Balo thể thao Puma</p>
+                            <p><strong>Tổng tiền:</strong> 1,200,000 VNĐ</p> -->
+                            <!-- <p><strong>Địa chỉ giao hàng:</strong> 789 Đường DEF, Quận 7, TP.HCM</p> -->
+                        <!-- </div>
+                    </div>
+                </div> -->
+
+                <!-- Tab Địa chỉ -->
+                <!-- <div id="addresses" class="tab-content">
+                    <h2 class="section-title">Địa chỉ giao hàng</h2>
+                    
+                    <div class="address-card default">
+                        <div class="default-badge">Mặc định</div>
+                        <h4>Nhà riêng</h4>
+                        <p><strong>Nguyễn Văn Nam</strong></p>
+                        <p>123 Đường Nguyễn Huệ, Phường Bến Nghé</p>
+                        <p>Quận 1, Thành phố Hồ Chí Minh</p>
+                        <p>Điện thoại: 0123456789</p>
+                        <div style="margin-top: 15px;">
+                            <button class="btn btn-primary" onclick="editAddress(1)">
+                                <i class="fas fa-edit"></i> Sửa
+                            </button>
+                            <button class="btn btn-danger" onclick="deleteAddress(1)">
+                                <i class="fas fa-trash"></i> Xóa
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="address-card">
+                        <h4>Văn phòng</h4>
+                        <p><strong>Nguyễn Văn Nam</strong></p>
+                        <p>456 Đường Lê Lợi, Phường Bến Thành</p>
+                        <p>Quận 1, Thành phố Hồ Chí Minh</p>
+                        <p>Điện thoại: 0987654321</p>
+                        <div style="margin-top: 15px;">
+                            <button class="btn btn-secondary" onclick="setDefault(2)">
+                                <i class="fas fa-star"></i> Đặt mặc định
+                            </button>
+                            <button class="btn btn-primary" onclick="editAddress(2)">
+                                <i class="fas fa-edit"></i> Sửa
+                            </button>
+                            <button class="btn btn-danger" onclick="deleteAddress(2)">
+                                <i class="fas fa-trash"></i> Xóa
+                            </button>
+                        </div>
+                    </div>
+
+                    <button class="btn btn-primary" onclick="addNewAddress()">
+                        <i class="fas fa-plus"></i> Thêm địa chỉ mới
+                    </button>
+                </div> -->
+
+                <!-- Tab Đổi mật khẩu -->
+                <div id="changepassword" class="tab-content">
+                    <h2 class="section-title">Đổi mật khẩu</h2>
+                    
+                    <form id="passwordForm">
+                        <div class="form-group">
+                            <label>Mật khẩu hiện tại</label>
+                            <input type="password" class="form-control" id="currentPassword" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Mật khẩu mới</label>
+                            <input type="password" class="form-control" id="newPassword" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Xác nhận mật khẩu mới</label>
+                            <input type="password" class="form-control" id="confirmPassword" required>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-key"></i> Đổi mật khẩu
+                        </button>
+                        
+                    </form>
+                </div>
+
+                <!-- Tab Thông báo -->
+                <div id="notifications" class="tab-content">
+                    <h2 class="section-title">Cài đặt thông báo</h2>
+                    
+                    <form id="notificationForm">
+                        <div class="form-group">
+                            <label>
+                                <input type="checkbox" checked> Nhận thông báo về đơn hàng qua email
+                            </label>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>
+                                <input type="checkbox" checked> Nhận thông báo khuyến mãi
+                            </label>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>
+                                <input type="checkbox"> Nhận tin tức sản phẩm mới
+                            </label>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>
+                                <input type="checkbox" checked> Nhận thông báo qua SMS
+                            </label>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-bell"></i> Lưu cài đặt
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Chuyển đổi tab
+        function showTab(tabName) {
+            // Ẩn tất cả tab
+            const tabs = document.querySelectorAll('.tab-content');
+            tabs.forEach(tab => tab.classList.remove('active'));
+            
+            // Hiển thị tab được chọn
+            document.getElementById(tabName).classList.add('active');
+            
+            // Cập nhật menu active
+            const menuItems = document.querySelectorAll('.menu-item');
+            menuItems.forEach(item => item.classList.remove('active'));
+            event.target.classList.add('active');
+        }
+
+        // Xử lý form cập nhật thông tin
+        // document.getElementById('profileForm').addEventListener('submit', function(e) {
+        //     e.preventDefault();
+        //     alert('Thông tin đã được cập nhật thành công!');
+        // });
+
+        // Xử lý form đổi mật khẩu
+        // document.getElementById('passwordForm').addEventListener('submit', function(e) {
+        //     e.preventDefault();
+        //     const newPassword = document.getElementById('newPassword').value;
+        //     const confirmPassword = document.getElementById('confirmPassword').value;
+            
+        //     if (newPassword !== confirmPassword) {
+        //         alert('Mật khẩu xác nhận không khớp!');
+        //         return;
+        //     }
+            
+        //     alert('Mật khẩu đã được thay đổi thành công!');
+        //     this.reset();
+        // });
+
+        // Xử lý form thông báo
+        document.getElementById('notificationForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Cài đặt thông báo đã được lưu!');
+        });
+
+        // Các hàm xử lý địa chỉ
+        function editAddress(id) {
+            alert('Chức năng sửa địa chỉ đang được phát triển!');
+        }
+
+        function deleteAddress(id) {
+            if (confirm('Bạn có chắc chắn muốn xóa địa chỉ này?')) {
+                alert('Địa chỉ đã được xóa!');
+            }
+        }
+
+        function setDefault(id) {
+            alert('Đã đặt làm địa chỉ mặc định!');
+        }
+
+        function addNewAddress() {
+            alert('Chức năng thêm địa chỉ mới đang được phát triển!');
+        }
+
+        // Đăng xuất
+        function logout() {
+            if (confirm('Bạn có chắc chắn muốn đăng xuất?')) {
+                alert('Đã đăng xuất thành công!');
+                // Chuyển hướng về trang đăng nhập
+                 window.location.href = '../html/main.html';
+            }
+        }
+
+        // Hiệu ứng hover cho các card
+        document.querySelectorAll('.order-card, .address-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-5px)';
+                this.style.boxShadow = '0 10px 25px rgba(0,0,0,0.15)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+                this.style.boxShadow = '0 5px 15px rgba(0,0,0,0.1)';
+            });
+        });
+    </script>
+     
+      <script src="../js/user-info.js"></script>
+      <script src="../js/changePassword.js"></script>
+       <script src="../js/profile.js"></script>
+       <script src="../js/history.js"></script>
+       <script src="../js/profileDisplay.js"></script>
+
+
+      <!-- <script src="../js/test.js"></script> -->
+      
+</body>
+</html>

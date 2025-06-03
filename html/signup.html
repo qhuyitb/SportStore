@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Đăng Ký Tài Khoản</title>
-     <link rel="stylesheet" href="/web/Thực tập cơ sở/fontawesome-free-6.7.2-web/css/all.css">
-    <link rel="stylesheet" href="/web/Thực tập cơ sở/themify-icons/themify-icons.css">
+     <link rel="stylesheet" href="../fontawesome-free-6.7.2-web/css/all.css">
+    <link rel="stylesheet" href="../themify-icons/themify-icons.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
         
@@ -175,156 +175,48 @@
             <h1>Tạo Tài Khoản Mới</h1>
             <p>Điền thông tin để đăng ký tài khoản</p>
         </div>
-        
-        <form>
+
+        <!-- Form đăng ký -->
+        <form id="signupForm">
             <div class="input-group">
-                <input type="text" id="fullname" required placeholder=" ">
-                <label for="fullname">Họ và tên</label>
+                <input type="text" id="fullName" required placeholder=" ">
+                <label for="fullName">Họ và tên</label>
             </div>
-            
+
             <div class="input-group">
-                <input type="email" id="email" required placeholder=" ">
+                <input type="email" id="username" id="email" required placeholder=" ">
                 <label for="email">Email</label>
             </div>
-            
+
             <div class="input-group">
                 <div class="password-container">
                     <input type="password" id="password" required placeholder=" ">
                     <label for="password">Mật khẩu</label>
-                    
                 </div>
             </div>
-            
+
             <div class="input-group">
                 <div class="password-container">
                     <input type="password" id="confirm-password" required placeholder=" ">
                     <label for="confirm-password">Nhập lại mật khẩu</label>
-                    
                 </div>
             </div>
-            
+
             <div class="terms">
                 <input type="checkbox" id="agree-terms" required>
                 <label for="agree-terms">Tôi đồng ý với <a href="#">Điều khoản dịch vụ</a> và <a href="#">Chính sách bảo mật</a></label>
             </div>
-            
+
             <button type="submit" class="register-button">ĐĂNG KÝ</button>
-            
+
             <div class="login-link">
-                Đã có tài khoản? <a href="/web/Thực tập cơ sở/html/login.html">Đăng nhập ngay</a>
+                Đã có tài khoản? <a href="../html/login.html">Đăng nhập ngay</a>
             </div>
+
+            <div id="message"></div>
         </form>
     </div>
 
-    <script>
-       
-        // Password strength indicator
-        passwordInput.addEventListener('input', function() {
-            const strengthBar = document.getElementById('strengthBar');
-            const password = this.value;
-            let strength = 0;
-            
-            // Kiểm tra độ dài
-            if (password.length >= 8) strength += 1;
-            
-            // Kiểm tra chữ hoa
-            if (/[A-Z]/.test(password)) strength += 1;
-            
-            // Kiểm tra số
-            if (/[0-9]/.test(password)) strength += 1;
-            
-            // Kiểm tra ký tự đặc biệt
-            if (/[^A-Za-z0-9]/.test(password)) strength += 1;
-            
-            // Cập nhật thanh strength
-            switch(strength) {
-                case 0:
-                    strengthBar.style.width = '0%';
-                    strengthBar.style.background = '#ff4444';
-                    break;
-                case 1:
-                    strengthBar.style.width = '25%';
-                    strengthBar.style.background = '#ff4444';
-                    break;
-                case 2:
-                    strengthBar.style.width = '50%';
-                    strengthBar.style.background = '#ffbb33';
-                    break;
-                case 3:
-                    strengthBar.style.width = '75%';
-                    strengthBar.style.background = '#00C851';
-                    break;
-                case 4:
-                    strengthBar.style.width = '100%';
-                    strengthBar.style.background = '#00C851';
-                    break;
-            }
-        });
-        
-        // Form validation
-        document.getElementById('registerForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            let isValid = true;
-            
-            // Validate name
-            const name = document.getElementById('fullname').value;
-            if (name.trim() === '' || name.length < 3) {
-                document.getElementById('nameError').style.display = 'block';
-                document.getElementById('fullname').classList.add('error');
-                isValid = false;
-            } else {
-                document.getElementById('nameError').style.display = 'none';
-                document.getElementById('fullname').classList.remove('error');
-            }
-            
-            // Validate email
-            const email = document.getElementById('email').value;
-            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (!emailRegex.test(email)) {
-                document.getElementById('emailError').style.display = 'block';
-                document.getElementById('email').classList.add('error');
-                isValid = false;
-            } else {
-                document.getElementById('emailError').style.display = 'none';
-                document.getElementById('email').classList.remove('error');
-            }
-            
-            // Validate password
-            const password = document.getElementById('password').value;
-            if (password.length < 8) {
-                document.getElementById('passwordError').style.display = 'block';
-                document.getElementById('password').classList.add('error');
-                isValid = false;
-            } else {
-                document.getElementById('passwordError').style.display = 'none';
-                document.getElementById('password').classList.remove('error');
-            }
-            
-            // Validate confirm password
-            const confirmPassword = document.getElementById('confirmPassword').value;
-            if (password !== confirmPassword) {
-                document.getElementById('confirmPasswordError').style.display = 'block';
-                document.getElementById('confirmPassword').classList.add('error');
-                isValid = false;
-            } else {
-                document.getElementById('confirmPasswordError').style.display = 'none';
-                document.getElementById('confirmPassword').classList.remove('error');
-            }
-            
-            // Validate terms
-            if (!document.getElementById('agreeTerms').checked) {
-                alert('Vui lòng đồng ý với điều khoản dịch vụ');
-                isValid = false;
-            }
-            
-            // If all valid, submit form
-            if (isValid) {
-                alert('Đăng ký thành công!');
-                // Thực tế bạn sẽ gửi form đến server ở đây
-                // this.submit();
-            }
-        });
-    </script>
+    <script src="../js/signup.js"></script>
 </body>
 </html>

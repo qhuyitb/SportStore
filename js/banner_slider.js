@@ -1,4 +1,5 @@
 // chuyen banner slide 
+
 document.addEventListener('DOMContentLoaded', function() {
     const banners = document.querySelectorAll('.flash-sale-banner');
     const dots = document.querySelectorAll('.dot');

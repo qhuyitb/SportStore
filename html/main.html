@@ -4,26 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sudes shop</title>
-    <link rel="stylesheet" href="/web/Thực tập cơ sở/bootstrap-5.3.6-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../bootstrap-5.3.6-dist/css/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
     <!-- <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet"> -->
 
     <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"> -->
-    <link rel="stylesheet" href="/web/Thực tập cơ sở/fontawesome-free-6.7.2-web/css/all.css">
-    <link rel="stylesheet" href="/web/Thực tập cơ sở/themify-icons/themify-icons.css">
-    <link rel="stylesheet" href="/web/Thực tập cơ sở/css/menu.css">
-    <link rel="stylesheet" href="/web/Thực tập cơ sở/css/banner.css">
-    <link rel="stylesheet" href="/web/Thực tập cơ sở/css/category.css">
-    <link rel="stylesheet" href="/web/Thực tập cơ sở/css/deal.css">
-    <link rel="stylesheet" href="/web/Thực tập cơ sở/css/product.css">
-    <link rel="stylesheet" href="/web/Thực tập cơ sở/css/modal.css">
-    <link rel="stylesheet" href="/web/Thực tập cơ sở/css/trending-section.css">
-    <link rel="stylesheet" href="/web/Thực tập cơ sở/css/sportman.css">
-    <link rel="stylesheet" href="/web/Thực tập cơ sở/css/banner-sport.css">
-    <link rel="stylesheet" href="/web/Thực tập cơ sở/css/feedback.css">
-    <link rel="stylesheet" href="/web/Thực tập cơ sở/css/news.css">
-    <link rel="stylesheet" href="/web/Thực tập cơ sở/css/brand.css">
-    <link rel="stylesheet" href="/web/Thực tập cơ sở/css/footer.css">
+    <link rel="stylesheet" href="../fontawesome-free-6.7.2-web/css/all.css">
+    <link rel="stylesheet" href="../themify-icons/themify-icons.css">
+    <link rel="stylesheet" href="../css/menu.css">
+    <link rel="stylesheet" href="../css/banner.css">
+    <link rel="stylesheet" href="../css/category.css">
+    <link rel="stylesheet" href="../css/deal.css">
+    <link rel="stylesheet" href="../css/product.css">
+    <link rel="stylesheet" href="../css/modal.css">
+    <link rel="stylesheet" href="../css/trending-section.css">
+    <!-- <link rel="stylesheet" href="../css/sportman.css"> -->
+    <link rel="stylesheet" href="../css/banner-sport.css">
+    <link rel="stylesheet" href="../css/feedback.css">
+    <link rel="stylesheet" href="../css/news.css">
+    <link rel="stylesheet" href="../css/brand.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    
 </head>
 <body>
     <!-- p1 navbar  -->
@@ -61,14 +62,14 @@
                 <!-- Logo -->
                 <div class="logo">
                     <a href="#">
-                        <img src="/web/Thực tập cơ sở/images/logo.webp" alt="Logo">
+                        <img src="../images/logo.webp" alt="Logo">
                     </a>
                 </div>
                 
                 <!-- Search Bar -->
                 <div class="search-bar">
                     <input type="text" id="searchInput" placeholder="Tìm kiếm sản phẩm..." class="search-input">
-                    <button class="search-btn">
+                    <button class="search-btn" onclick="window.location.href='../html/filter.html'">
                         <i class="ti-search"></i>
                     </button>
                     <div id="searchSuggestions" class="search-suggestions">
@@ -77,13 +78,13 @@
                             <span>Đề xuất phổ biến</span>
                         </div>
                         <div class="search-suggestions-text">
-                            <a href="#">Giày chạy</a>
-                            <a href="#">Áo chạy bộ</a>
-                            <a href="#">Áo chống nắng</a>
-                            <a href="#">Tất/vớ</a>
-                            <a href="#">Nón leo núi</a>
-                            <a href="#">Bóng rổ</a>
-                            <a href="#">Bình nước</a>
+                            <a href="../html/filter.html">Giày chạy</a>
+                            <a href="../html/filter.html">Áo chạy bộ</a>
+                            <a href="../html/filter.html">Áo chống nắng</a>
+                            <a href="../html/filter.html">Tất/vớ</a>
+                            <a href="../html/filter.html">Nón leo núi</a>
+                            <a href="../html/filter.html">Bóng rổ</a>
+                            <a href="../html/filter.html">Bình nước</a>
 
                         </div>
 
@@ -94,7 +95,7 @@
                 <!-- Right Side -->
                 <div class="nav-right">
                     <!-- Hotline -->
-                    <div class="nav-item hotline">
+                    <div class="nav-item hotline" onclick="window.location.href='../html/hotline.html'">
                         <i class="fa-brands fa-whatsapp"></i>
                         <div class="nav-text">
                             <span>Hotline hỗ trợ</span>
@@ -103,7 +104,7 @@
                     </div>
                     
                     <!-- Cửa hàng -->
-                    <div class="nav-item store" onclick="window.location.href='/web/Thực tập cơ sở/html/anddress.html'">
+                    <div class="nav-item store" onclick="window.location.href='../html/anddress.html'">
                         <i class="fa-solid fa-store"></i>
                         <div class="nav-text">
                             <span>Hệ thống</span>
@@ -115,19 +116,24 @@
                     <div class="nav-item account-dropdown">
                         <i class="fa-solid fa-user"></i>
                         <div class="nav-text">
-                            <span>Thông tin </span>
+                            <span>Thông tin </span> 
+                           
                             <span class="highlight">
                                 Tài khoản
                                 <i class="fa-solid fa-caret-down"></i>
                             </span>
+                            <!-- <span class="highlight">
+                                Quang Huy
+                                <i class="fa-solid fa-caret-down"></i>
+                            </span> -->
                         </div>
 
                         <div class="dropdown-menu">
-                            <a href="/web/Thực tập cơ sở/html/login.html">
+                            <a href="../html/login.html">
                                 <i class="fa-solid fa-arrow-right-to-bracket"></i>
                                 Đăng nhập
                             </a>
-                            <a href="/web/Thực tập cơ sở/html/signup.html">
+                            <a href="../html/signup.html">
                                 <i class="fa-solid fa-user-plus"></i>
                                 Đăng ký
                             </a>
@@ -186,7 +192,7 @@
                         </div>
                         </div>
                         
-                        <a href="/web/Thực tập cơ sở/html/checkout.html" class="btn btn-danger w-100 rounded-0 py-4 checkout-btn">
+                        <a href="../html/checkout.html" class="btn btn-danger w-100 rounded-0 py-4 checkout-btn">
                             <i class="fas fa-credit-card me-2"></i> THANH TOÁN NGAY
                         </a>
                     </div>
@@ -215,7 +221,7 @@
                 <!-- Mục 1 -->
                 <div class="menu-item">
                     <div class="menu-link">
-                        <img src="/web/Thực tập cơ sở/images/sports.webp" alt="Môn Thể Thao" class="menu-img">
+                        <img src="../images/sports.webp" alt="Môn Thể Thao" class="menu-img">
                         <span>MÔN THỂ THAO</span>
                         <i class="ti-angle-right arrow-icon"></i>
                     </div>
@@ -235,7 +241,7 @@
                 <!-- Mục 2 -->
                 <div class="menu-item">
                     <div class="menu-link">
-                        <img src="/web/Thực tập cơ sở/images/soccer-player.png" alt="Nam" class="menu-img">
+                        <img src="../images/soccer-player.png" alt="Nam" class="menu-img">
 
                         <span>NAM</span>
                         <i class="ti-angle-right arrow-icon"></i>
@@ -252,7 +258,7 @@
                 <!-- Mục 3 -->
                 <div class="menu-item">
                     <div class="menu-link">
-                        <img src="/web/Thực tập cơ sở/images/playing.webp" alt="Nữ" class="menu-img">
+                        <img src="../images/playing.webp" alt="Nữ" class="menu-img">
 
                         <span>NỮ</span>
                         <i class="ti-angle-right arrow-icon"></i>
@@ -269,7 +275,7 @@
                 <!-- Mục 4 -->
                 <div class="menu-item">
                     <div class="menu-link">
-                        <img src="/web/Thực tập cơ sở/images/games.webp" alt="Trẻ Em" class="menu-img">
+                        <img src="../images/games.webp" alt="Trẻ Em" class="menu-img">
 
                         <span>TRẺ EM</span>
                         <i class="ti-angle-right arrow-icon"></i>
@@ -287,7 +293,7 @@
                 <!-- Mục 5 -->
                 <div class="menu-item">
                     <div class="menu-link">
-                        <img src="/web/Thực tập cơ sở/images/fitness-tracker.webp" alt="Phụ Kiện" class="menu-img">
+                        <img src="../images/fitness-tracker.webp" alt="Phụ Kiện" class="menu-img">
 
                         <span>PHỤ KIỆN</span>
                         <i class="ti-angle-right arrow-icon"></i>
@@ -373,15 +379,15 @@
             <!-- Phần thông tin cuối menu moblie -->
             <div class="menu-footer">
                 <div class="footer-item">
-                    <img src="/web/Thực tập cơ sở/images/pnghq.com-mobile-phone-icon-png-tra-4.png" alt="">
+                    <img src="../images/pnghq.com-mobile-phone-icon-png-tra-4.png" alt="">
                     <div class="footer-text">
                         <span class="footer-label">Hotline hỗ trợ:</span>
                         <span class="footer-value">1900 6750</span>
                     </div>
                 </div>
             
-                <div class="footer-item" onclick="window.location.href='/web/Thực tập cơ sở/html/anddress.html'">
-                    <img src="/web/Thực tập cơ sở/images/store-menu.png" alt="" >
+                <div class="footer-item" onclick="window.location.href='../html/anddress.html'">
+                    <img src="../images/store-menu.png" alt="" >
                     <div class="footer-text">
                         <span class="footer-label">Hệ thống cửa hàng</span>
                         <span class="footer-value">7 cửa hàng</span>
@@ -406,7 +412,7 @@
         <div class="banner-slider">
             <!-- Banner 1 -->
             <div class="flash-sale-banner active">
-                <img src="/web/Thực tập cơ sở/images/slider_1.webp" alt="Flash Sale Banner" class="banner-image">
+                <img src="../images/slider_1.webp" alt="Flash Sale Banner" class="banner-image">
                 <div class="banner-content">
                     <h1 class="banner-title">FLASH SALE</h1>
                     <p class="banner-slogan">MUA ĐÔI GIẢM BỘI</p>
@@ -420,7 +426,7 @@
         
             <!-- Banner 2 -->
             <div class="flash-sale-banner">
-                <img src="/web/Thực tập cơ sở/images/slider_2.jpg" alt="Hot Deal Banner" class="banner-image">
+                <img src="../images/slider_2.jpg" alt="Hot Deal Banner" class="banner-image">
                 <div class="banner-content">
                     <h1 class="banner-title">HOT DEAL</h1>
                     <p class="banner-slogan">CÀNG MUA CÀNG GIẢM</p>
@@ -465,7 +471,7 @@
                 <!-- t1 -->
                 <div class="category-item">
                     <div class="category-img">
-                        <img src="/web/Thực tập cơ sở/images/image_cate_1.webp" alt="">
+                        <img src="../images/image_cate_1.webp" alt="">
                     </div>
                     <div class="category-name">Chạy bộ</div>
                     <div class="product-count">9 sản phẩm</div>
@@ -473,7 +479,7 @@
                 <!-- t2  -->
                 <div class="category-item">
                     <div class="category-img">
-                        <img src="/web/Thực tập cơ sở/images/image_cate_2.webp" alt="">
+                        <img src="../images/image_cate_2.webp" alt="">
                     </div>
                     
                     <div class="category-name">Tennis</div>
@@ -482,7 +488,7 @@
                 <!-- t3  -->
                 <div class="category-item">
                     <div class="category-img">
-                        <img src="/web/Thực tập cơ sở/images/image_cate_3.webp" alt="">
+                        <img src="../images/image_cate_3.webp" alt="">
                     </div>
                     <div class="category-name">Hiking & Trekking</div>
                     <div class="product-count">7 sản phẩm</div>
@@ -490,7 +496,7 @@
                 <!-- t4  -->
                 <div class="category-item">
                     <div class="category-img">
-                        <img src="/web/Thực tập cơ sở/images/image_cate_4.webp" alt="">
+                        <img src="../images/image_cate_4.webp" alt="">
                     </div>
                     <div class="category-name">Đi bộ</div>
                     <div class="product-count">7 sản phẩm</div>
@@ -498,7 +504,7 @@
                 <!-- t5  -->
                 <div class="category-item">
                     <div class="category-img">
-                        <img src="/web/Thực tập cơ sở/images/image_cate_5.webp" alt="">
+                        <img src="../images/image_cate_5.webp" alt="">
                     </div>
                     <div class="category-name">Đạp Xe</div>
                     <div class="product-count">8 sản phẩm</div>
@@ -506,7 +512,7 @@
                 <!-- t6  -->
                 <div class="category-item">
                     <div class="category-img">
-                        <img src="/web/Thực tập cơ sở/images/image_cate_6.webp" alt="">
+                        <img src="../images/image_cate_6.webp" alt="">
                     </div>
                     <div class="category-name">Bóng Đá & Futsal</div>
                     <div class="product-count">11 sản phẩm</div>
@@ -514,7 +520,7 @@
                 <!-- t7  -->
                 <div class="category-item">
                     <div class="category-img">
-                        <img src="/web/Thực tập cơ sở/images/image_cate_7.webp" alt="">
+                        <img src="../images/image_cate_7.webp" alt="">
                     </div>
                     <div class="category-name">Bóng bàn</div>
                     <div class="product-count">11 sản phẩm</div>
@@ -522,7 +528,7 @@
                 <!-- t8  -->
                 <div class="category-item">
                     <div class="category-img">
-                        <img src="/web/Thực tập cơ sở/images/image_cate_8.webp" alt="">
+                        <img src="../images/image_cate_8.webp" alt="">
                     </div>
                     <div class="category-name">Câu lông</div>
                     <div class="product-count">11 sản phẩm</div>
@@ -530,7 +536,7 @@
                 <!-- t9  -->
                 <div class="category-item">
                     <div class="category-img">
-                        <img src="/web/Thực tập cơ sở/images/image_cate_9.webp" alt="">
+                        <img src="../images/image_cate_9.webp" alt="">
                     </div>
                     <div class="category-name">Bóng rổ</div>
                     <div class="product-count">11 sản phẩm</div>
@@ -538,7 +544,7 @@
                 <!-- t10  -->
                 <div class="category-item">
                     <div class="category-img">
-                        <img src="/web/Thực tập cơ sở/images/image_cate_10.webp" alt="">
+                        <img src="../images/image_cate_10.webp" alt="">
                     </div>
                     <div class="category-name">Bơi lội</div>
                     <div class="product-count">9 sản phẩm</div>
@@ -546,7 +552,7 @@
                 <!-- t11  -->
                 <div class="category-item">
                     <div class="category-img">
-                        <img src="/web/Thực tập cơ sở/images/image_cate_11.webp" alt="">
+                        <img src="../images/image_cate_11.webp" alt="">
                     </div>
                     <div class="category-name">Chạy địa hình</div>
                     <div class="product-count">7 sản phẩm</div>
@@ -554,7 +560,7 @@
                 <!-- t12  -->
                 <div class="category-item">
                     <div class="category-img">
-                        <img src="/web/Thực tập cơ sở/images/image_cate_12.webp" alt="">
+                        <img src="../images/image_cate_12.webp" alt="">
                     </div>
                     <div class="category-name">Cắm trại</div>
                     <div class="product-count">7 sản phẩm</div>
@@ -621,17 +627,17 @@
                             <i class="ti-heart"></i>
                         </div>
                         <div class="product-image">
-                            <img class="product-image-first" src="/web/Thực tập cơ sở/images/frame_3.webp" alt=""  >
-                            <img class="product-image-second" src="/web/Thực tập cơ sở/images/product11.webp" alt="">
+                            <img class="product-image-first" src="../images/frame_3.webp" alt=""  >
+                            <img class="product-image-second" src="../images/product11.webp" alt="">
                         </div>
                         <div class="product-info">
                             <!-- <h3>Màu sắc:</h3> -->
                             <div class="color-option">
                                 <div class="color-boxes">
-                                    <div class="color-box clblue" data-src="/web/Thực tập cơ sở/images/product11.webp"></div>
-                                    <div class="color-box clgray" data-src="/web/Thực tập cơ sở/images/product12.webp"></div>
-                                    <div class="color-box clwhite" data-src="/web/Thực tập cơ sở/images/product13.webp"></div>
-                                    <div class="color-box clblack" data-src="/web/Thực tập cơ sở/images/product14.webp"></div>
+                                    <div class="color-box clblue" data-src="../images/product11.webp"></div>
+                                    <div class="color-box clgray" data-src="../images/product12.webp"></div>
+                                    <div class="color-box clwhite" data-src="../images/product13.webp"></div>
+                                    <div class="color-box clblack" data-src="../images/product14.webp"></div>
                                 </div>
                             </div>
                             <h3>Giày chạy bộ JOGFLOW 500.1 cho nam</h3>
@@ -656,15 +662,15 @@
                             <i class="ti-heart"></i>
                         </div>
                         <div class="product-image">
-                            <img class="product-image-first" src="/web/Thực tập cơ sở/images/frame_3.webp" alt=""  >
-                            <img class="product-image-second" src="/web/Thực tập cơ sở/images/product41.webp" alt="">
+                            <img class="product-image-first" src="../images/frame_3.webp" alt=""  >
+                            <img class="product-image-second" src="../images/product41.webp" alt="">
                         </div>
                         <div class="product-info">
                             <!-- <h3>Màu sắc:</h3> -->
                             <div class="color-option">
                                 <div class="color-boxes">
-                                    <div class="color-box clviolet" data-src="/web/Thực tập cơ sở/images/product41.webp"></div>
-                                    <div class="color-box clblue" data-src="/web/Thực tập cơ sở/images/product42.jpg"></div>
+                                    <div class="color-box clviolet" data-src="../images/product41.webp"></div>
+                                    <div class="color-box clblue" data-src="../images/product42.jpg"></div>
                                 </div>
                             </div>
                             <h3>Balô dã ngoại thời trang cao cấp NH100 10L</h3>
@@ -691,15 +697,15 @@
                             <i class="ti-heart"></i>
                         </div>
                         <div class="product-image">
-                            <img class="product-image-first" src="/web/Thực tập cơ sở/images/frame_3.webp" alt=""  >
-                            <img class="product-image-second" src="/web/Thực tập cơ sở/images/product31.webp" alt="">
+                            <img class="product-image-first" src="../images/frame_3.webp" alt=""  >
+                            <img class="product-image-second" src="../images/product31.webp" alt="">
                         </div>
                         <div class="product-info">
                             <!-- <h3>Màu sắc:</h3> -->
                             <div class="color-option">
                                 <div class="color-boxes">
-                                    <div class="color-box clwhite-black" data-src="/web/Thực tập cơ sở/images/product31.webp"></div>
-                                    <div class="color-box clgray-pink" data-src="/web/Thực tập cơ sở/images/product32.webp"></div>
+                                    <div class="color-box clwhite-black" data-src="../images/product31.webp"></div>
+                                    <div class="color-box clgray-pink" data-src="../images/product32.webp"></div>
                                 </div>
                             </div>
                             <h3>Giày đi bộ thể dục PW 100 cho trẻ em</h3>
@@ -724,15 +730,15 @@
                             <i class="ti-heart"></i>
                         </div>
                         <div class="product-image">
-                            <img class="product-image-first" src="/web/Thực tập cơ sở/images/frame_3.webp" alt=""  >
-                            <img class="product-image-second" src="/web/Thực tập cơ sở/images/bong_tap_gym_pink.webp" alt="">
+                            <img class="product-image-first" src="../images/frame_3.webp" alt=""  >
+                            <img class="product-image-second" src="../images/bong_tap_gym_pink.webp" alt="">
                         </div>
                         <div class="product-info">
                             <!-- <h3>Màu sắc:</h3> -->
                             <div class="color-option">
                                 <div class="color-boxes">
-                                    <div class="color-box clpink" data-src="/web/Thực tập cơ sở/images/bong_tap_gym_pink.webp"></div>
-                                    <div class="color-box clsea" data-src="/web/Thực tập cơ sở/images/bong_tap_gym_blue.webp"></div>
+                                    <div class="color-box clpink" data-src="../images/bong_tap_gym_pink.webp"></div>
+                                    <div class="color-box clsea" data-src="../images/bong_tap_gym_blue.webp"></div>
                                 </div>
                             </div>
                             <h3>Bóng tập Gym Resist 60 cm cho trẻ em</h3>
@@ -756,17 +762,17 @@
                             <i class="ti-heart"></i>
                         </div>
                         <div class="product-image">
-                            <img class="product-image-first" src="/web/Thực tập cơ sở/images/frame_3.webp" alt=""  >
-                            <img class="product-image-second" src="/web/Thực tập cơ sở/images/product21.webp" alt="">
+                            <img class="product-image-first" src="../images/frame_3.webp" alt=""  >
+                            <img class="product-image-second" src="../images/product21.webp" alt="">
                         </div>
                         <div class="product-info">
                             <!-- <h3>Màu sắc:</h3> -->
                             <div class="color-option">
                                 <div class="color-boxes">
-                                    <div class="color-box clblue" data-src="/web/Thực tập cơ sở/images/product21.webp"></div>
-                                    <div class="color-box clgray" data-src="/web/Thực tập cơ sở/images/product22.webp"></div>
-                                    <div class="color-box clwhite" data-src="/web/Thực tập cơ sở/images/product23.webp"></div>
-                                    <div class="color-box clblack" data-src="/web/Thực tập cơ sở/images/product24.webp"></div>
+                                    <div class="color-box clblue" data-src="../images/product21.webp"></div>
+                                    <div class="color-box clgray" data-src="../images/product22.webp"></div>
+                                    <div class="color-box clwhite" data-src="../images/product23.webp"></div>
+                                    <div class="color-box clblack" data-src="../images/product24.webp"></div>
                                 </div>
                             </div>
                             <h3>Giày chạy bộ KALENJI cao cấp 500.1 cho nam</h3>
@@ -829,17 +835,17 @@
                         <i class="ti-heart"></i>
                     </div>
                     <div class="product-image">
-                        <!-- <img class="product-image-first" src="/web/Thực tập cơ sở/images/frame_3.webp" alt=""  > -->
-                        <img class="product-image-second" src="/web/Thực tập cơ sở/images/bong_ro.webp" alt="">
+                        <!-- <img class="product-image-first" src="../images/frame_3.webp" alt=""  > -->
+                        <img class="product-image-second" src="../images/bong_ro.webp" alt="">
                     </div>
                     <div class="product-info">
                         <!-- <h3>Màu sắc:</h3> -->
                         <div class="color-option" style="visibility: hidden;">
                             <!-- <div class="color-boxes">
-                                <div class="color-box clblue" data-src="/web/Thực tập cơ sở/images/product11.webp"></div>
-                                <div class="color-box clgray" data-src="/web/Thực tập cơ sở/images/product12.webp"></div>
-                                <div class="color-box clwhite" data-src="/web/Thực tập cơ sở/images/product13.webp"></div>
-                                <div class="color-box clblack" data-src="/web/Thực tập cơ sở/images/product14.webp"></div>
+                                <div class="color-box clblue" data-src="../images/product11.webp"></div>
+                                <div class="color-box clgray" data-src="../images/product12.webp"></div>
+                                <div class="color-box clwhite" data-src="../images/product13.webp"></div>
+                                <div class="color-box clblack" data-src="../images/product14.webp"></div>
                             </div> -->
                         </div>
                         <h3>Quả bóng rổ BT100 cỡ 7 cho nam từ 13 tuổi trở lên</h3>
@@ -863,16 +869,16 @@
                         <i class="ti-heart"></i>
                     </div>
                     <div class="product-image">
-                        <img class="product-image-first" src="/web/Thực tập cơ sở/images/frame_2.webp" alt=""  >
-                        <img class="product-image-second" src="/web/Thực tập cơ sở/images/quanduido_1.webp" alt="">
+                        <img class="product-image-first" src="../images/frame_2.webp" alt=""  >
+                        <img class="product-image-second" src="../images/quanduido_1.webp" alt="">
                     </div>
                     <div class="product-info">
                         <!-- <h3>Màu sắc:</h3> -->
                         <div class="color-option">
                             <div class="color-boxes">
-                                <div class="color-box clred" data-src="/web/Thực tập cơ sở/images/quanduido_1.webp"></div>
-                                <div class="color-box clxl" data-src="/web/Thực tập cơ sở/images/quanduido_2.jpg"></div>
-                                <div class="color-box clblue" data-src="/web/Thực tập cơ sở/images/quanduido_3.jpg"></div>
+                                <div class="color-box clred" data-src="../images/quanduido_1.webp"></div>
+                                <div class="color-box clxl" data-src="../images/quanduido_2.jpg"></div>
+                                <div class="color-box clblue" data-src="../images/quanduido_3.jpg"></div>
                             </div>
                         </div>
                         <h3>Quần short bơi 100 cho nam</h3>
@@ -896,15 +902,15 @@
                         <i class="ti-heart"></i>
                     </div>
                     <div class="product-image">
-                        <!-- <img class="product-image-first" src="/web/Thực tập cơ sở/images/frame_2.webp" alt=""  > -->
-                        <img class="product-image-second" src="/web/Thực tập cơ sở/images/cnn_1.webp" alt="">
+                        <!-- <img class="product-image-first" src="../images/frame_2.webp" alt=""  > -->
+                        <img class="product-image-second" src="../images/cnn_1.webp" alt="">
                     </div>
                     <div class="product-info">
                         <!-- <h3>Màu sắc:</h3> -->
                         <div class="color-option">
                             <div class="color-boxes">
-                                <div class="color-box clpink" data-src="/web/Thực tập cơ sở/images/cnn_1.webp"></div>
-                                <div class="color-box clxd" data-src="/web/Thực tập cơ sở/images/cnn_2.webp"></div>
+                                <div class="color-box clpink" data-src="../images/cnn_1.webp"></div>
+                                <div class="color-box clxd" data-src="../images/cnn_2.webp"></div>
                             </div>
                         </div>
                         <h3>Áo khoác nỉ leo núi MH520 cho nữ</h3>
@@ -928,16 +934,16 @@
                         <i class="ti-heart"></i>
                     </div>
                     <div class="product-image">
-                        <!-- <img class="product-image-first" src="/web/Thực tập cơ sở/images/frame_2.webp" alt=""  > -->
-                        <img class="product-image-second" src="/web/Thực tập cơ sở/images/tuigiay.webp" alt="">
+                        <!-- <img class="product-image-first" src="../images/frame_2.webp" alt=""  > -->
+                        <img class="product-image-second" src="../images/tuigiay.webp" alt="">
                     </div>
                     <div class="product-info">
                         <!-- <h3>Màu sắc:</h3> -->
                         <div class="color-option" style="visibility: hidden">
                             <!-- <div class="color-boxes">
-                                <div class="color-box clred" data-src="/web/Thực tập cơ sở/images/quanduido_1.webp"></div>
-                                <div class="color-box clxl" data-src="/web/Thực tập cơ sở/images/quanduido_3.jpg"></div>
-                                <div class="color-box clblue" data-src="/web/Thực tập cơ sở/images/quandui_do_2.jpg"></div>
+                                <div class="color-box clred" data-src="../images/quanduido_1.webp"></div>
+                                <div class="color-box clxl" data-src="../images/quanduido_3.jpg"></div>
+                                <div class="color-box clblue" data-src="../images/quandui_do_2.jpg"></div>
                             </div> -->
                         </div>
                         <h3>Túi đựng giày Light </h3>
@@ -961,16 +967,16 @@
                         <i class="ti-heart"></i>
                     </div>
                     <div class="product-image">
-                        <!-- <img class="product-image-first" src="/web/Thực tập cơ sở/images/frame_2.webp" alt=""  > -->
-                        <img class="product-image-second" src="/web/Thực tập cơ sở/images/bldn_1.webp" alt="">
+                        <!-- <img class="product-image-first" src="../images/frame_2.webp" alt=""  > -->
+                        <img class="product-image-second" src="../images/bldn_1.webp" alt="">
                     </div>
                     <div class="product-info">
                         <!-- <h3>Màu sắc:</h3> -->
                         <div class="color-option">
                             <div class="color-boxes">
-                                <div class="color-box clcamxanh" data-src="/web/Thực tập cơ sở/images/bldn_1.webp"></div>
-                                <div class="color-box clpink" data-src="/web/Thực tập cơ sở/images/bldn_2.webp"></div>
-                                <!-- <div class="color-box clblue" data-src="/web/Thực tập cơ sở/images/quandui_do_2.jpg"></div> -->
+                                <div class="color-box clcamxanh" data-src="../images/bldn_1.webp"></div>
+                                <div class="color-box clpink" data-src="../images/bldn_2.webp"></div>
+                                <!-- <div class="color-box clblue" data-src="../images/quandui_do_2.jpg"></div> -->
                             </div>
                         </div>
                         <h3>Balô leo núi dã ngoại Arpenaz 7L cho trẻ em</h3>
@@ -1001,16 +1007,16 @@
                         <i class="ti-heart"></i>
                     </div>
                     <div class="product-image">
-                        <!-- <img class="product-image-first" src="/web/Thực tập cơ sở/images/frame_2.webp" alt=""  > -->
-                        <img class="product-image-second" src="/web/Thực tập cơ sở/images/binhgallon.webp" alt="">
+                        <!-- <img class="product-image-first" src="../images/frame_2.webp" alt=""  > -->
+                        <img class="product-image-second" src="../images/binhgallon.webp" alt="">
                     </div>
                     <div class="product-info">
                         <!-- <h3>Màu sắc:</h3> -->
                         <div class="color-option" style="visibility: hidden">
                             <!-- <div class="color-boxes">
-                                <div class="color-box clcamxanh" data-src="/web/Thực tập cơ sở/images/bldn_1.webp"></div>
-                                <div class="color-box clpink" data-src="/web/Thực tập cơ sở/images/bldn_2.webp"></div>
-                                <div class="color-box clblue" data-src="/web/Thực tập cơ sở/images/quandui_do_2.jpg"></div>
+                                <div class="color-box clcamxanh" data-src="../images/bldn_1.webp"></div>
+                                <div class="color-box clpink" data-src="../images/bldn_2.webp"></div>
+                                <div class="color-box clblue" data-src="../images/quandui_do_2.jpg"></div>
                             </div> -->
                         </div>
                         <h3>Bình đựng nước Gallon - Đen</h3>
@@ -1034,16 +1040,16 @@
                         <i class="ti-heart"></i>
                     </div>
                     <div class="product-image">
-                        <!-- <img class="product-image-first" src="/web/Thực tập cơ sở/images/frame_2.webp" alt=""  > -->
-                        <img class="product-image-second" src="/web/Thực tập cơ sở/images/kinhboixanh.webp" alt="">
+                        <!-- <img class="product-image-first" src="../images/frame_2.webp" alt=""  > -->
+                        <img class="product-image-second" src="../images/kinhboixanh.webp" alt="">
                     </div>
                     <div class="product-info">
                         <!-- <h3>Màu sắc:</h3> -->
                         <div class="color-option">
                             <div class="color-boxes">
-                                <div class="color-box clsea" data-src="/web/Thực tập cơ sở/images/kinhboixanh.webp"></div>
-                                <div class="color-box clpink" data-src="/web/Thực tập cơ sở/images/kinhboihong.jpg"></div>
-                                <!-- <div class="color-box clblue" data-src="/web/Thực tập cơ sở/images/quandui_do_2.jpg"></div> -->
+                                <div class="color-box clsea" data-src="../images/kinhboixanh.webp"></div>
+                                <div class="color-box clpink" data-src="../images/kinhboihong.jpg"></div>
+                                <!-- <div class="color-box clblue" data-src="../images/quandui_do_2.jpg"></div> -->
                             </div>
                         </div>
                         <h3>Kính bơi tròng kính trong suốt Xbase</h3>
@@ -1067,16 +1073,16 @@
                         <i class="ti-heart"></i>
                     </div>
                     <div class="product-image">
-                        <!-- <img class="product-image-first" src="/web/Thực tập cơ sở/images/frame_2.webp" alt=""  > -->
-                        <img class="product-image-second" src="/web/Thực tập cơ sở/images/muboido.webp" alt="">
+                        <!-- <img class="product-image-first" src="../images/frame_2.webp" alt=""  > -->
+                        <img class="product-image-second" src="../images/muboido.webp" alt="">
                     </div>
                     <div class="product-info">
                         <!-- <h3>Màu sắc:</h3> -->
                         <div class="color-option">
                             <div class="color-boxes">
-                                <div class="color-box clpink" data-src="/web/Thực tập cơ sở/images/muboido.webp"></div>
-                                <div class="color-box clblack" data-src="/web/Thực tập cơ sở/images/muboi.webp"></div>
-                                <!-- <div class="color-box clblue" data-src="/web/Thực tập cơ sở/images/quandui_do_2.jpg"></div> -->
+                                <div class="color-box clpink" data-src="../images/muboido.webp"></div>
+                                <div class="color-box clblack" data-src="../images/muboi.webp"></div>
+                                <!-- <div class="color-box clblue" data-src="../images/quandui_do_2.jpg"></div> -->
                             </div>
                         </div>
                         <h3>Mũ bơi lưới</h3>
@@ -1100,16 +1106,16 @@
                         <i class="ti-heart"></i>
                     </div>
                     <div class="product-image">
-                        <!-- <img class="product-image-first" src="/web/Thực tập cơ sở/images/frame_2.webp" alt=""  > -->
-                        <img class="product-image-second" src="/web/Thực tập cơ sở/images/quanboihoatietlacay.webp" alt="">
+                        <!-- <img class="product-image-first" src="../images/frame_2.webp" alt=""  > -->
+                        <img class="product-image-second" src="../images/quanboihoatietlacay.webp" alt="">
                     </div>
                     <div class="product-info">
                         <!-- <h3>Màu sắc:</h3> -->
                         <div class="color-option" style="visibility: hidden">
                             <!-- <div class="color-boxes">
-                                <div class="color-box clcamxanh" data-src="/web/Thực tập cơ sở/images/bldn_1.webp"></div>
-                                <div class="color-box clpink" data-src="/web/Thực tập cơ sở/images/bldn_2.webp"></div>
-                                <div class="color-box clblue" data-src="/web/Thực tập cơ sở/images/quandui_do_2.jpg"></div>
+                                <div class="color-box clcamxanh" data-src="../images/bldn_1.webp"></div>
+                                <div class="color-box clpink" data-src="../images/bldn_2.webp"></div>
+                                <div class="color-box clblue" data-src="../images/quandui_do_2.jpg"></div>
                             </div> -->
                         </div>
                         <h3>Quần short bơi 100 cho nam - Họa tiết lá cây</h3>
@@ -1133,16 +1139,16 @@
                         <i class="ti-heart"></i>
                     </div>
                     <div class="product-image">
-                        <!-- <img class="product-image-first" src="/web/Thực tập cơ sở/images/frame_2.webp" alt=""  > -->
-                        <img class="product-image-second" src="/web/Thực tập cơ sở/images/aobalochonu.jpg" alt="">
+                        <!-- <img class="product-image-first" src="../images/frame_2.webp" alt=""  > -->
+                        <img class="product-image-second" src="../images/aobalochonu.jpg" alt="">
                     </div>
                     <div class="product-info">
                         <!-- <h3>Màu sắc:</h3> -->
                         <div class="color-option" style="visibility: hidden">
                             <!-- <div class="color-boxes">
-                                <div class="color-box clcamxanh" data-src="/web/Thực tập cơ sở/images/bldn_1.webp"></div>
-                                <div class="color-box clpink" data-src="/web/Thực tập cơ sở/images/bldn_2.webp"></div>
-                                <div class="color-box clblue" data-src="/web/Thực tập cơ sở/images/quandui_do_2.jpg"></div>
+                                <div class="color-box clcamxanh" data-src="../images/bldn_1.webp"></div>
+                                <div class="color-box clpink" data-src="../images/bldn_2.webp"></div>
+                                <div class="color-box clblue" data-src="../images/quandui_do_2.jpg"></div>
                             </div> -->
                         </div>
                         <h3>Áo Tank - Top thể thao Jockey Nữ - J1231 - Jockey</h3>
@@ -1170,16 +1176,16 @@
                         <i class="ti-heart"></i>
                     </div>
                     <div class="product-image">
-                        <!-- <img class="product-image-first" src="/web/Thực tập cơ sở/images/frame_2.webp" alt=""  > -->
-                        <img class="product-image-second" src="/web/Thực tập cơ sở/images/giayleonuinam.webp" alt="">
+                        <!-- <img class="product-image-first" src="../images/frame_2.webp" alt=""  > -->
+                        <img class="product-image-second" src="../images/giayleonuinam.webp" alt="">
                     </div>
                     <div class="product-info">
                         <!-- <h3>Màu sắc:</h3> -->
                         <div class="color-option" style="visibility: hidden">
                             <!-- <div class="color-boxes">
-                                <div class="color-box clcamxanh" data-src="/web/Thực tập cơ sở/images/bldn_1.webp"></div>
-                                <div class="color-box clpink" data-src="/web/Thực tập cơ sở/images/bldn_2.webp"></div>
-                                <div class="color-box clblue" data-src="/web/Thực tập cơ sở/images/quandui_do_2.jpg"></div>
+                                <div class="color-box clcamxanh" data-src="../images/bldn_1.webp"></div>
+                                <div class="color-box clpink" data-src="../images/bldn_2.webp"></div>
+                                <div class="color-box clblue" data-src="../images/quandui_do_2.jpg"></div>
                             </div> -->
                         </div>
                         <h3>Giày leo núi dã ngoại cổ lửng Arpenaz 50 cho nam</h3>
@@ -1203,16 +1209,16 @@
                         <i class="ti-heart"></i>
                     </div>
                     <div class="product-image">
-                        <!-- <img class="product-image-first" src="/web/Thực tập cơ sở/images/frame_2.webp" alt=""  > -->
-                        <img class="product-image-second" src="/web/Thực tập cơ sở/images/bobancung.webp" alt="">
+                        <!-- <img class="product-image-first" src="../images/frame_2.webp" alt=""  > -->
+                        <img class="product-image-second" src="../images/bobancung.webp" alt="">
                     </div>
                     <div class="product-info">
                         <!-- <h3>Màu sắc:</h3> -->
                         <div class="color-option" style="visibility: hidden">
                             <!-- <div class="color-boxes">
-                                <div class="color-box clcamxanh" data-src="/web/Thực tập cơ sở/images/bldn_1.webp"></div>
-                                <div class="color-box clpink" data-src="/web/Thực tập cơ sở/images/bldn_2.webp"></div>
-                                <div class="color-box clblue" data-src="/web/Thực tập cơ sở/images/quandui_do_2.jpg"></div>
+                                <div class="color-box clcamxanh" data-src="../images/bldn_1.webp"></div>
+                                <div class="color-box clpink" data-src="../images/bldn_2.webp"></div>
+                                <div class="color-box clblue" data-src="../images/quandui_do_2.jpg"></div>
                             </div> -->
                         </div>
                         <h3>Bộ bắn cung Soft Archery 100</h3>
@@ -1236,16 +1242,16 @@
                         <i class="ti-heart"></i>
                     </div>
                     <div class="product-image">
-                        <!-- <img class="product-image-first" src="/web/Thực tập cơ sở/images/frame_2.webp" alt=""  > -->
-                        <img class="product-image-second" src="/web/Thực tập cơ sở/images/votcaulong.webp" alt="">
+                        <!-- <img class="product-image-first" src="../images/frame_2.webp" alt=""  > -->
+                        <img class="product-image-second" src="../images/votcaulong.webp" alt="">
                     </div>
                     <div class="product-info">
                         <!-- <h3>Màu sắc:</h3> -->
                         <div class="color-option" style="visibility: hidden">
                             <!-- <div class="color-boxes">
-                                <div class="color-box clcamxanh" data-src="/web/Thực tập cơ sở/images/bldn_1.webp"></div>
-                                <div class="color-box clpink" data-src="/web/Thực tập cơ sở/images/bldn_2.webp"></div>
-                                <div class="color-box clblue" data-src="/web/Thực tập cơ sở/images/quandui_do_2.jpg"></div>
+                                <div class="color-box clcamxanh" data-src="../images/bldn_1.webp"></div>
+                                <div class="color-box clpink" data-src="../images/bldn_2.webp"></div>
+                                <div class="color-box clblue" data-src="../images/quandui_do_2.jpg"></div>
                             </div> -->
                         </div>
                         <h3>Bộ vợt cầu lông dành cho mọi lứa tuổi - vàng xanh dương</h3>
@@ -1269,16 +1275,16 @@
                         <i class="ti-heart"></i>
                     </div>
                     <div class="product-image">
-                        <!-- <img class="product-image-first" src="/web/Thực tập cơ sở/images/frame_2.webp" alt=""  > -->
-                        <img class="product-image-second" src="/web/Thực tập cơ sở/images/giaydibonu.webp" alt="">
+                        <!-- <img class="product-image-first" src="../images/frame_2.webp" alt=""  > -->
+                        <img class="product-image-second" src="../images/giaydibonu.webp" alt="">
                     </div>
                     <div class="product-info">
                         <!-- <h3>Màu sắc:</h3> -->
                         <div class="color-option" style="visibility: hidden">
                             <div class="color-boxes">
-                                <!-- <div class="color-box clcamxanh" data-src="/web/Thực tập cơ sở/images/bldn_1.webp"></div>
-                                <div class="color-box clpink" data-src="/web/Thực tập cơ sở/images/bldn_2.webp"></div>
-                                <div class="color-box clblue" data-src="/web/Thực tập cơ sở/images/quandui_do_2.jpg"></div> -->
+                                <!-- <div class="color-box clcamxanh" data-src="../images/bldn_1.webp"></div>
+                                <div class="color-box clpink" data-src="../images/bldn_2.webp"></div>
+                                <div class="color-box clblue" data-src="../images/quandui_do_2.jpg"></div> -->
                             </div>
                         </div>
                         <h3>Giày đi bộ cho nữ Soft 140.2</h3>
@@ -1302,16 +1308,16 @@
                         <i class="ti-heart"></i>
                     </div>
                     <div class="product-image">
-                        <!-- <img class="product-image-first" src="/web/Thực tập cơ sở/images/frame_2.webp" alt=""  > -->
-                        <img class="product-image-second" src="/web/Thực tập cơ sở/images/bongtenis.jpg" alt="">
+                        <!-- <img class="product-image-first" src="../images/frame_2.webp" alt=""  > -->
+                        <img class="product-image-second" src="../images/bongtenis.jpg" alt="">
                     </div>
                     <div class="product-info">
                         <!-- <h3>Màu sắc:</h3> -->
                         <div class="color-option" style="visibility: hidden">
                             <div class="color-boxes">
-                                <!-- <div class="color-box clcamxanh" data-src="/web/Thực tập cơ sở/images/bldn_1.webp"></div>
-                                <div class="color-box clpink" data-src="/web/Thực tập cơ sở/images/bldn_2.webp"></div>
-                                <div class="color-box clblue" data-src="/web/Thực tập cơ sở/images/quandui_do_2.jpg"></div> -->
+                                <!-- <div class="color-box clcamxanh" data-src="../images/bldn_1.webp"></div>
+                                <div class="color-box clpink" data-src="../images/bldn_2.webp"></div>
+                                <div class="color-box clblue" data-src="../images/quandui_do_2.jpg"></div> -->
                             </div>
                         </div>
                         <h3>Bóng tennis V2 570 cao cấp</h3>
@@ -1340,16 +1346,16 @@
                         <i class="ti-heart"></i>
                     </div>
                     <div class="product-image">
-                        <!-- <img class="product-image-first" src="/web/Thực tập cơ sở/images/frame_2.webp" alt=""  > -->
-                        <img class="product-image-second" src="/web/Thực tập cơ sở/images/vottenis.webp" alt="">
+                        <!-- <img class="product-image-first" src="../images/frame_2.webp" alt=""  > -->
+                        <img class="product-image-second" src="../images/vottenis.webp" alt="">
                     </div>
                     <div class="product-info">
                         <!-- <h3>Màu sắc:</h3> -->
                         <div class="color-option">
                             <div class="color-boxes">
-                                <div class="color-box clwhite" data-src="/web/Thực tập cơ sở/images/vottenis.webp"></div>
-                                <div class="color-box clblack" data-src="/web/Thực tập cơ sở/images/vottennisden.webp"></div>
-                                <!-- <div class="color-box clblue" data-src="/web/Thực tập cơ sở/images/quandui_do_2.jpg"></div> -->
+                                <div class="color-box clwhite" data-src="../images/vottenis.webp"></div>
+                                <div class="color-box clblack" data-src="../images/vottennisden.webp"></div>
+                                <!-- <div class="color-box clblue" data-src="../images/quandui_do_2.jpg"></div> -->
                             </div>
                         </div>
                         <h3>Vợt tennis TF-X1 V2 275-Forheads</h3>
@@ -1373,16 +1379,16 @@
                         <i class="ti-heart"></i>
                     </div>
                     <div class="product-image">
-                        <!-- <img class="product-image-first" src="/web/Thực tập cơ sở/images/frame_2.webp" alt=""  > -->
-                        <img class="product-image-second" src="/web/Thực tập cơ sở/images/xedapleodoc.jpg" alt="">
+                        <!-- <img class="product-image-first" src="../images/frame_2.webp" alt=""  > -->
+                        <img class="product-image-second" src="../images/xedapleodoc.jpg" alt="">
                     </div>
                     <div class="product-info">
                         <!-- <h3>Màu sắc:</h3> -->
                         <div class="color-option" style="visibility: hidden">
                             <div class="color-boxes" style="visibility: hidden">
-                                <!-- <div class="color-box clsea" data-src="/web/Thực tập cơ sở/images/kinhboixanh.webp"></div>
-                                <div class="color-box clpink" data-src="/web/Thực tập cơ sở/images/kinhboihong.jpg"></div>
-                                <div class="color-box clblue" data-src="/web/Thực tập cơ sở/images/quandui_do_2.jpg"></div> -->
+                                <!-- <div class="color-box clsea" data-src="../images/kinhboixanh.webp"></div>
+                                <div class="color-box clpink" data-src="../images/kinhboihong.jpg"></div>
+                                <div class="color-box clblue" data-src="../images/quandui_do_2.jpg"></div> -->
                             </div>
                         </div>
                         <h3>Xe đạp địa hình leo núi BaseLeo cao cấp</h3>
@@ -1406,16 +1412,16 @@
                         <i class="ti-heart"></i>
                     </div>
                     <div class="product-image">
-                        <!-- <img class="product-image-first" src="/web/Thực tập cơ sở/images/frame_2.webp" alt=""  > -->
-                        <img class="product-image-second" src="/web/Thực tập cơ sở/images/vantruot.jpg" alt="">
+                        <!-- <img class="product-image-first" src="../images/frame_2.webp" alt=""  > -->
+                        <img class="product-image-second" src="../images/vantruot.jpg" alt="">
                     </div>
                     <div class="product-info">
                         <!-- <h3>Màu sắc:</h3> -->
                         <div class="color-option" style="visibility: hidden">
                             <div class="color-boxes" style="visibility: hidden">
-                                <!-- <div class="color-box clpink" data-src="/web/Thực tập cơ sở/images/muboido.webp"></div>
-                                <div class="color-box clblack" data-src="/web/Thực tập cơ sở/images/muboi.webp"></div>
-                                <div class="color-box clblue" data-src="/web/Thực tập cơ sở/images/quandui_do_2.jpg"></div> -->
+                                <!-- <div class="color-box clpink" data-src="../images/muboido.webp"></div>
+                                <div class="color-box clblack" data-src="../images/muboi.webp"></div>
+                                <div class="color-box clblue" data-src="../images/quandui_do_2.jpg"></div> -->
                             </div>
                         </div>
                         <h3>Ván Trượt Cougar Penny D7005</h3>
@@ -1439,16 +1445,16 @@
                         <i class="ti-heart"></i>
                     </div>
                     <div class="product-image">
-                        <!-- <img class="product-image-first" src="/web/Thực tập cơ sở/images/frame_2.webp" alt=""  > -->
-                        <img class="product-image-second" src="/web/Thực tập cơ sở/images/thuyensup.webp" alt="">
+                        <!-- <img class="product-image-first" src="../images/frame_2.webp" alt=""  > -->
+                        <img class="product-image-second" src="../images/thuyensup.webp" alt="">
                     </div>
                     <div class="product-info">
                         <!-- <h3>Màu sắc:</h3> -->
                         <div class="color-option" style="visibility: hidden">
                             <div class="color-boxes" style="visibility: hidden">
-                                <!-- <div class="color-box clcamxanh" data-src="/web/Thực tập cơ sở/images/bldn_1.webp" ></div>
-                                <div class="color-box clpink" data-src="/web/Thực tập cơ sở/images/bldn_2.webp" ></div>
-                                <div class="color-box clblue" data-src="/web/Thực tập cơ sở/images/quandui_do_2.jpg" ></div> -->
+                                <!-- <div class="color-box clcamxanh" data-src="../images/bldn_1.webp" ></div>
+                                <div class="color-box clpink" data-src="../images/bldn_2.webp" ></div>
+                                <div class="color-box clblue" data-src="../images/quandui_do_2.jpg" ></div> -->
                             </div>
                         </div>
                         <h3>Thuyền Sup KORPON TRẮNG - Chính hãng Châu Âu</h3>
@@ -1472,15 +1478,15 @@
                         <i class="ti-heart"></i>
                     </div>
                     <div class="product-image">
-                        <img class="product-image-first" src="/web/Thực tập cơ sở/images/frame_3.webp" alt=""  >
-                        <img class="product-image-second" src="/web/Thực tập cơ sở/images/bong_tap_gym_pink.webp" alt="">
+                        <img class="product-image-first" src="../images/frame_3.webp" alt=""  >
+                        <img class="product-image-second" src="../images/bong_tap_gym_pink.webp" alt="">
                     </div>
                     <div class="product-info">
                         <!-- <h3>Màu sắc:</h3> -->
                         <div class="color-option">
                             <div class="color-boxes">
-                                <div class="color-box clpink" data-src="/web/Thực tập cơ sở/images/bong_tap_gym_pink.webp"></div>
-                                <div class="color-box clsea" data-src="/web/Thực tập cơ sở/images/bong_tap_gym_blue.webp"></div>
+                                <div class="color-box clpink" data-src="../images/bong_tap_gym_pink.webp"></div>
+                                <div class="color-box clsea" data-src="../images/bong_tap_gym_blue.webp"></div>
                             </div>
                         </div>
                         <h3>Bóng tập Gym Resist 60 cm cho trẻ em</h3>
@@ -1516,24 +1522,24 @@
                 <div class="grid grid-cols-2 gap-3">
                     <!-- New Arrivals - Tăng height từ h-64 lên h-72 -->
                     <div class="relative overflow-hidden hover-grow rounded-lg h-73">  <!-- Đã tăng lên h-72 -->
-                        <img src="/web/Thực tập cơ sở/images/section_gbanner_1.webp" alt="New Arrivals" class="w-full h-full object-cover">
+                        <img src="../images/section_gbanner_1.webp" alt="New Arrivals" class="w-full h-full object-cover">
                         <div class="absolute bottom-4 left-4 text-white text-3xl font-bold hover-bar">NEW ARRIVALS</div>
                     </div>
                     <!-- Grid phụ bên phải -->
                     <div class="grid grid-cols-2 gap-3">
                         <!-- Now Trending - Tăng từ h-32 lên h-36 -->
                         <div class="relative overflow-hidden hover-grow rounded-lg h-36">  <!-- Đã tăng lên h-36 -->
-                            <img src="/web/Thực tập cơ sở/images/section_gbanner_4.webp" alt="Now Trending" class="w-full h-full object-cover">
+                            <img src="../images/section_gbanner_4.webp" alt="Now Trending" class="w-full h-full object-cover">
                             <div class="absolute bottom-3 left-3 text-white text-xl font-bold hover-bar">NOW TRENDING</div>
                         </div>
                         <!-- Campaigns - Tăng từ h-32 lên h-36 -->
                         <div class="relative overflow-hidden hover-grow rounded-lg h-36">  <!-- Đã tăng lên h-36 -->
-                            <img src="/web/Thực tập cơ sở/images/section_gbanner_3.webp" alt="Campaigns" class="w-full h-full object-cover">
+                            <img src="../images/section_gbanner_3.webp" alt="Campaigns" class="w-full h-full object-cover">
                             <div class="absolute bottom-3 left-3 text-white text-xl font-bold hover-bar">CAMPAIGNS</div>
                         </div>
                         <!-- Lookbook - Tăng từ h-32 lên h-36 -->
                         <div class="relative overflow-hidden hover-grow col-span-2 rounded-lg h-38">  <!-- Đã tăng lên h-36 -->
-                            <img src="/web/Thực tập cơ sở/images/section_gbanner_2.webp" alt="Lookbook" class="w-full h-full object-cover">
+                            <img src="../images/section_gbanner_2.webp" alt="Lookbook" class="w-full h-full object-cover">
                             <div class="absolute bottom-3 left-3 text-white text-xl font-bold hover-bar">LOOKBOOK</div>
                         </div>
                     </div>
@@ -1560,7 +1566,7 @@
                             <i class="ti-angle-right"></i>
                         </button>
                     </div>
-                    <a href="#" class="view-all-btn">
+                    <a href="../html/demo.html" class="view-all-btn">
                         <span>Xem tất cả</span> 
                         <i class="ti-arrow-right"></i>
                     </a>
@@ -1574,21 +1580,21 @@
             
                 <div class="deal-products-container sport-men-wrapper" >
                     <!-- Product 1 -->
-                    <div class="product-card" data-sizes="36,37,38,39,40,41" >
+                    <div class="product-card" data-sizes="S,M, L, XL, XXL " >
                         <div class="product-badge">Giảm 33%</div>
                         <div class="product-wishlist">
                             <i class="ti-heart"></i>
                         </div>
                         <div class="product-image">
-                            <!-- <img class="product-image-first" src="/web/Thực tập cơ sở/images/frame_3.webp" alt=""  > -->
-                            <img class="product-image-second" src="/web/Thực tập cơ sở/images/aodtqgvndo.webp" alt="">
+                            <!-- <img class="product-image-first" src="../images/frame_3.webp" alt=""  > -->
+                            <img class="product-image-second" src="../images/aodtqgvndo.webp" alt="">
                         </div>
                         <div class="product-info">
                             <!-- <h3>Màu sắc:</h3> -->
                             <div class="color-option">
                                 <div class="color-boxes">
-                                    <div class="color-box clred" data-src="/web/Thực tập cơ sở/images/aodtqgvndo.webp"></div>
-                                    <div class="color-box clwhite" data-src="/web/Thực tập cơ sở/images/aodtqgvn.webp"></div>
+                                    <div class="color-box clred" data-src="../images/aodtqgvndo.webp"></div>
+                                    <div class="color-box clwhite" data-src="../images/aodtqgvn.webp"></div>
                                     
                                 </div>
                             </div>
@@ -1608,22 +1614,22 @@
                     </div>
 
                     <!-- Product 2 -->
-                    <div class="product-card" data-sizes="38,39,40,41,42">
+                    <div class="product-card" data-sizes="38,39,40,41,42" >
                         <!-- <div class="product-badge">Giảm 20%</div> -->
                         <div class="product-wishlist">
                             <i class="ti-heart"></i>
                         </div>
                         <div class="product-image">
-                            <!-- <img class="product-image-first" src="/web/Thực tập cơ sở/images/frame_3.webp" alt=""  > -->
-                            <img class="product-image-second" src="/web/Thực tập cơ sở/images/aonambaohongcute.jpg" alt="">
+                            <!-- <img class="product-image-first" src="../images/frame_3.webp" alt=""  > -->
+                            <img class="product-image-second" src="../images/aonambaohongcute.jpg" alt="">
                         </div>
                         <div class="product-info">
                             <!-- <h3>Màu sắc:</h3> -->
-                            <div class="color-option">
+                            <div class="color-option" style="visibility: hidden;">
                                 <div class="color-boxes" >
                                     
-                                    <div class="color-box clpink" data-src="/web/Thực tập cơ sở/images/aonambaohongcute.jpg"></div>
-                                    <div class="color-box clblack" data-src="/web/Thực tập cơ sở/images/aonambaohong.jpg"></div>
+                                    <div class="color-box clpink" data-src="../images/aonambaohongcute.jpg"></div>
+                                    <div class="color-box clblack" data-src="../images/aonambaohong.jpg"></div>
                                 </div>
                             </div>
                             <h3>Bộ Đồ Thể Thao Bóng Rổ In Hình Chú Báo </h3>
@@ -1649,15 +1655,15 @@
                             <i class="ti-heart"></i>
                         </div>
                         <div class="product-image">
-                            <img class="product-image-first" src="/web/Thực tập cơ sở/images/frame_3.webp" alt=""  >
-                            <img class="product-image-second" src="/web/Thực tập cơ sở/images/p2155510.webp" alt="">
+                            <img class="product-image-first" src="../images/frame_3.webp" alt=""  >
+                            <img class="product-image-second" src="../images/p2155510.webp" alt="">
                         </div>
                         <div class="product-info">
                             <!-- <h3>Màu sắc:</h3> -->
                             <div class="color-option">
                                 <div class="color-boxes">
-                                    <div class="color-box cldencam" data-src="/web/Thực tập cơ sở/images/p2155510.webp"></div>
-                                    <div class="color-box clblue" data-src="/web/Thực tập cơ sở/images/p2155551.webp"></div>
+                                    <div class="color-box cldencam" data-src="../images/p2155510.webp"></div>
+                                    <div class="color-box clblue" data-src="../images/p2155551.webp"></div>
                                 </div>
                             </div>
                             <h3>Giày chạy bộ RUN ACTIVE cho nam</h3>
@@ -1682,15 +1688,15 @@
                             <i class="ti-heart"></i>
                         </div>
                         <div class="product-image">
-                            <img class="product-image-first" src="/web/Thực tập cơ sở/images/frame_3.webp" alt=""  >
-                            <img class="product-image-second" src="/web/Thực tập cơ sở/images/qaotapnam.jpg" alt="">
+                            <img class="product-image-first" src="../images/frame_3.webp" alt=""  >
+                            <img class="product-image-second" src="../images/qaotapnam.jpg" alt="">
                         </div>
                         <div class="product-info">
                             <!-- <h3>Màu sắc:</h3> -->
                             <div class="color-option" style="visibility: hidden">
                                 <!-- <div class="color-boxes" >
-                                    <div class="color-box clpink" data-src="/web/Thực tập cơ sở/images/bong_tap_gym_pink.webp"></div>
-                                    <div class="color-box clsea" data-src="/web/Thực tập cơ sở/images/bong_tap_gym_blue.webp"></div>
+                                    <div class="color-box clpink" data-src="../images/bong_tap_gym_pink.webp"></div>
+                                    <div class="color-box clsea" data-src="../images/bong_tap_gym_blue.webp"></div>
                                 </div> -->
                             </div>
                             <h3>Bộ quần áo tập thể thao len nam Lining AWEN015-1</h3>
@@ -1718,16 +1724,16 @@
                             <i class="ti-heart"></i>
                         </div>
                         <div class="product-image">
-                            <!-- <img class="product-image-first" src="/web/Thực tập cơ sở/images/frame_2.webp" alt=""  > -->
-                            <img class="product-image-second" src="/web/Thực tập cơ sở/images/quanboihoatietlacay.webp" alt="">
+                            <!-- <img class="product-image-first" src="../images/frame_2.webp" alt=""  > -->
+                            <img class="product-image-second" src="../images/quanboihoatietlacay.webp" alt="">
                         </div>
                         <div class="product-info">
                             <!-- <h3>Màu sắc:</h3> -->
                             <div class="color-option" style="visibility: hidden">
                                 <!-- <div class="color-boxes">
-                                    <div class="color-box clcamxanh" data-src="/web/Thực tập cơ sở/images/bldn_1.webp"></div>
-                                    <div class="color-box clpink" data-src="/web/Thực tập cơ sở/images/bldn_2.webp"></div>
-                                    <div class="color-box clblue" data-src="/web/Thực tập cơ sở/images/quandui_do_2.jpg"></div>
+                                    <div class="color-box clcamxanh" data-src="../images/bldn_1.webp"></div>
+                                    <div class="color-box clpink" data-src="../images/bldn_2.webp"></div>
+                                    <div class="color-box clblue" data-src="../images/quandui_do_2.jpg"></div>
                                 </div> -->
                             </div>
                             <h3>Quần short bơi 100 cho nam - Họa tiết lá cây</h3>
@@ -1757,8 +1763,8 @@
 
         <!-- banner sport  -->
         <!-- <div class="banner-sport">
-            <img src="/web/Thực tập cơ sở/images/vector-black-friday-facebook-cover-template_898472-28.jpg" alt="Sports Wear Banner">
-            <img src="/web/Thực tập cơ sở/images/1689739546979-những cách quảng cáo khai trương tiệm tóc.jpg" alt="Sports Wear Banner">
+            <img src="../images/vector-black-friday-facebook-cover-template_898472-28.jpg" alt="Sports Wear Banner">
+            <img src="../images/1689739546979-những cách quảng cáo khai trương tiệm tóc.jpg" alt="Sports Wear Banner">
         </div>  -->
 
         <!--p9 sport for woman  -->
@@ -1776,15 +1782,15 @@
                             <i class="ti-heart"></i>
                         </div>
                         <div class="product-image">
-                            <img class="product-image-first" src="/web/Thực tập cơ sở/images/frame_2.webp" alt=""  >
-                            <img class="product-image-second" src="/web/Thực tập cơ sở/images/vay-cau-long-530-cho-nu-trang.jpg" alt="">
+                            <img class="product-image-first" src="../images/frame_2.webp" alt=""  >
+                            <img class="product-image-second" src="../images/vay-cau-long-530-cho-nu-trang.jpg" alt="">
                         </div>
                         <div class="product-info">
                             <!-- <h3>Màu sắc:</h3> -->
                             <div class="color-option" style="visibility: hidden">
                                 <!-- <div class="color-boxes" >
-                                    <div class="color-box clred" data-src="/web/Thực tập cơ sở/images/aodtqgvndo.webp"></div>
-                                    <div class="color-box clwhite" data-src="/web/Thực tập cơ sở/images/aodtqgvn.webp"></div>
+                                    <div class="color-box clred" data-src="../images/aodtqgvndo.webp"></div>
+                                    <div class="color-box clwhite" data-src="../images/aodtqgvn.webp"></div>
                                     
                                 </div> -->
                             </div>
@@ -1810,16 +1816,16 @@
                             <i class="ti-heart"></i>
                         </div>
                         <div class="product-image">
-                            <!-- <img class="product-image-first" src="/web/Thực tập cơ sở/images/frame_3.webp" alt=""  > -->
-                            <img class="product-image-second" src="/web/Thực tập cơ sở/images/ao-boi-1-manh-nu-yingfa-921.jpeg" alt="">
+                            <!-- <img class="product-image-first" src="../images/frame_3.webp" alt=""  > -->
+                            <img class="product-image-second" src="../images/ao-boi-1-manh-nu-yingfa-921.jpeg" alt="">
                         </div>
                         <div class="product-info" >
                             <!-- <h3>Màu sắc:</h3> -->
                             <div class="color-option" style="visibility: hidden;">
                                 <!-- <div class="color-boxes" >
                                     
-                                    <div class="color-box clpink" data-src="/web/Thực tập cơ sở/images/aonambaohongcute.jpg"></div>
-                                    <div class="color-box clblack" data-src="/web/Thực tập cơ sở/images/aonambaohong.jpg"></div>
+                                    <div class="color-box clpink" data-src="../images/aonambaohongcute.jpg"></div>
+                                    <div class="color-box clblack" data-src="../images/aonambaohong.jpg"></div>
                                 </div> -->
                             </div>
                             
@@ -1846,15 +1852,15 @@
                             <i class="ti-heart"></i>
                         </div>
                         <div class="product-image">
-                            <img class="product-image-first" src="/web/Thực tập cơ sở/images/frame_3.webp" alt=""  >
-                            <img class="product-image-second" src="/web/Thực tập cơ sở/images/giaydibonu.webp" alt="">
+                            <img class="product-image-first" src="../images/frame_3.webp" alt=""  >
+                            <img class="product-image-second" src="../images/giaydibonu.webp" alt="">
                         </div>
                         <div class="product-info">
                             <!-- <h3>Màu sắc:</h3> -->
                             <div class="color-option" style="visibility: hidden">
                                 <!-- <div class="color-boxes">
-                                    <div class="color-box cldencam" data-src="/web/Thực tập cơ sở/images/p2155510.webp"></div>
-                                    <div class="color-box clblue" data-src="/web/Thực tập cơ sở/images/p2155551.webp"></div>
+                                    <div class="color-box cldencam" data-src="../images/p2155510.webp"></div>
+                                    <div class="color-box clblue" data-src="../images/p2155551.webp"></div>
                                 </div> -->
                             </div>
                             <h3>Giày đi bộ cho nữ Soft 140.2</h3>
@@ -1879,15 +1885,15 @@
                             <i class="ti-heart"></i>
                         </div>
                         <div class="product-image">
-                            <img class="product-image-first" src="/web/Thực tập cơ sở/images/frame_3.webp" alt=""  >
-                            <img class="product-image-second" src="/web/Thực tập cơ sở/images/bofullsportnu.webp" alt="">
+                            <img class="product-image-first" src="../images/frame_3.webp" alt=""  >
+                            <img class="product-image-second" src="../images/bofullsportnu.webp" alt="">
                         </div>
                         <div class="product-info">
                             <!-- <h3>Màu sắc:</h3> -->
                             <div class="color-option" style="visibility: hidden">
                                 <!-- <div class="color-boxes" >
-                                    <div class="color-box clpink" data-src="/web/Thực tập cơ sở/images/bong_tap_gym_pink.webp"></div>
-                                    <div class="color-box clsea" data-src="/web/Thực tập cơ sở/images/bong_tap_gym_blue.webp"></div>
+                                    <div class="color-box clpink" data-src="../images/bong_tap_gym_pink.webp"></div>
+                                    <div class="color-box clsea" data-src="../images/bong_tap_gym_blue.webp"></div>
                                 </div> -->
                             </div>
                             <h3>Bộ quần áo tập thể thao len nữ Lining AWEN015-1</h3>
@@ -1915,16 +1921,16 @@
                             <i class="ti-heart"></i>
                         </div>
                         <div class="product-image">
-                            <!-- <img class="product-image-first" src="/web/Thực tập cơ sở/images/frame_2.webp" alt=""  > -->
-                            <img class="product-image-second" src="/web/Thực tập cơ sở/images/p1826351.webp" alt="">
+                            <!-- <img class="product-image-first" src="../images/frame_2.webp" alt=""  > -->
+                            <img class="product-image-second" src="../images/p1826351.webp" alt="">
                         </div>
                         <div class="product-info">
                             <!-- <h3>Màu sắc:</h3> -->
                             <div class="color-option" style="visibility: hidden">
                                 <!-- <div class="color-boxes">
-                                    <div class="color-box clcamxanh" data-src="/web/Thực tập cơ sở/images/bldn_1.webp"></div>
-                                    <div class="color-box clpink" data-src="/web/Thực tập cơ sở/images/bldn_2.webp"></div>
-                                    <div class="color-box clblue" data-src="/web/Thực tập cơ sở/images/quandui_do_2.jpg"></div>
+                                    <div class="color-box clcamxanh" data-src="../images/bldn_1.webp"></div>
+                                    <div class="color-box clpink" data-src="../images/bldn_2.webp"></div>
+                                    <div class="color-box clblue" data-src="../images/quandui_do_2.jpg"></div>
                                 </div> -->
                             </div>
                             <h3>Áo polo không tay ultralight cho nữ</h3>
@@ -1992,7 +1998,7 @@
                         <div class="testimonial-card">
                             <div class="client-info">
                                 <div class="client-avatar">
-                                <img src="/web/Thực tập cơ sở/images/Gai1-xinh-Han-Quoc-Ji-Seong.webp" alt="Minh Nhật" />
+                                <img src="../images/Gai1-xinh-Han-Quoc-Ji-Seong.webp" alt="Minh Nhật" />
                                 </div>
                                 <div class="client-details">
                                 <h4>Chị. Ngọc Anh</h4>
@@ -2007,7 +2013,7 @@
                         <div class="testimonial-card">
                             <div class="client-info">
                                 <div class="client-avatar">
-                                <img src="/web/Thực tập cơ sở/images/gai2feedback.jpg" alt="Minh Nhật" />
+                                <img src="../images/gai2feedback.jpg" alt="Minh Nhật" />
                                 </div>
                                 <div class="client-details">
                                 <h4>Chị. Thanh Huyền</h4>
@@ -2022,7 +2028,7 @@
                         <div class="testimonial-card">
                             <div class="client-info">
                                 <div class="client-avatar">
-                                <img src="/web/Thực tập cơ sở/images/gai3feedback.jpg" alt="Minh Nhật" />
+                                <img src="../images/gai3feedback.jpg" alt="Minh Nhật" />
                                 </div>
                                 <div class="client-details">
                                 <h4>Chị. Hương Lan</h4>
@@ -2037,7 +2043,7 @@
                         <div class="testimonial-card">
                             <div class="client-info">
                                 <div class="client-avatar">
-                                <img src="/web/Thực tập cơ sở/images/gai4feedback.jpg" alt="Minh Nhật" />
+                                <img src="../images/gai4feedback.jpg" alt="Minh Nhật" />
                                 </div>
                                 <div class="client-details">
                                 <h4>Chị. Thảo Nguyên</h4>
@@ -2052,7 +2058,7 @@
                         <div class="testimonial-card">
                             <div class="client-info">
                                 <div class="client-avatar">
-                                <img src="/web/Thực tập cơ sở/images/gai5feedback.jpg" alt="Minh Nhật" />
+                                <img src="../images/gai5feedback.jpg" alt="Minh Nhật" />
                                 </div>
                                 <div class="client-details">
                                 <h4>Chị. Kim Chi</h4>
@@ -2067,7 +2073,7 @@
                         <div class="testimonial-card">
                             <div class="client-info">
                                 <div class="client-avatar">
-                                <img src="/web/Thực tập cơ sở/images/gai6feedback.jpg" alt="Minh Nhật" />
+                                <img src="../images/gai6feedback.jpg" alt="Minh Nhật" />
                                 </div>
                                 <div class="client-details">
                                 <h4>Chị. Minh Ánh</h4>
@@ -2105,7 +2111,7 @@
                 <!-- news 1  -->
                 <div class="news-item">
                     <div class="news-img" >
-                        <img src="/web/Thực tập cơ sở/images/news1.webp" alt="">
+                        <img src="../images/news1.webp" alt="">
                         <div class="news-date">
                             <i class="fa-solid fa-clock" style="padding-right: 3px;"></i>
                             06/09/2023
@@ -2121,7 +2127,7 @@
                 <!-- news 2  -->
                 <div class="news-item">
                     <div class="news-img" >
-                        <img src="/web/Thực tập cơ sở/images/news2.webp" alt="">
+                        <img src="../images/news2.webp" alt="">
                         <div class="news-date">
                             <i class="fa-solid fa-clock" style="padding-right: 3px;"></i>
                             06/09/2023
@@ -2138,7 +2144,7 @@
                 
                 <div class="news-item">
                     <div class="news-img" >
-                        <img src="/web/Thực tập cơ sở/images/news3.webp" alt="">
+                        <img src="../images/news3.webp" alt="">
                         <div class="news-date">
                             <i class="fa-solid fa-clock" style="padding-right: 3px;"></i>
                             06/09/2023
@@ -2155,7 +2161,7 @@
                 
                 <div class="news-item">
                     <div class="news-img" >
-                        <img src="/web/Thực tập cơ sở/images/news4.webp" alt="">
+                        <img src="../images/news4.webp" alt="">
                         <div class="news-date">
                             <i class="fa-solid fa-clock" style="padding-right: 3px;"></i>
                             06/09/2023
@@ -2174,7 +2180,7 @@
                 
                 <div class="news-item">
                     <div class="news-img" >
-                        <img src="/web/Thực tập cơ sở/images/news4.webp" alt="">
+                        <img src="../images/news4.webp" alt="">
                         <div class="news-date">
                             <i class="fa-solid fa-clock" style="padding-right: 3px;"></i>
                             06/09/2023
@@ -2210,39 +2216,39 @@
                 <div class="brand-container" id="brandSlider">
                     <!-- Brand 1 -->
                     <div class="brand-logo">
-                        <img src="/web/Thực tập cơ sở/images/img_brand_2.webp" alt="Nike" />
+                        <img src="../images/img_brand_2.webp" alt="Nike" />
                     </div>
                     <!-- Brand 2 -->
                     <div class="brand-logo">
-                        <img src="/web/Thực tập cơ sở/images/img_brand_1.webp" alt="Adidas" />
+                        <img src="../images/img_brand_1.webp" alt="Adidas" />
                     </div>
                     <!-- Brand 3 -->
                     <div class="brand-logo">
-                        <img src="/web/Thực tập cơ sở/images/img_brand_3.webp" alt="Puma" />
+                        <img src="../images/img_brand_3.webp" alt="Puma" />
                     </div>
                     <!-- Brand 4 -->
                     <div class="brand-logo">
-                        <img src="/web/Thực tập cơ sở/images/img_brand_4.webp" alt="Under Armour" />
+                        <img src="../images/img_brand_4.webp" alt="Under Armour" />
                     </div>
                     <!-- Brand 5 -->
                     <div class="brand-logo">
-                        <img src="/web/Thực tập cơ sở/images/img_brand_5.webp" alt="New Balance" />
+                        <img src="../images/img_brand_5.webp" alt="New Balance" />
                     </div>
                     <!-- Brand 6 -->
                     <div class="brand-logo">
-                        <img src="/web/Thực tập cơ sở/images/img_brand_6.webp" alt="Converse" />
+                        <img src="../images/img_brand_6.webp" alt="Converse" />
                     </div>
                     <!-- Brand 7 -->
                     <div class="brand-logo">
-                        <img src="/web/Thực tập cơ sở/images/img_brand_7.webp" alt="Converse" />
+                        <img src="../images/img_brand_7.webp" alt="Converse" />
                     </div>
                     <!-- Brand 8 -->
                     <div class="brand-logo">
-                        <img src="/web/Thực tập cơ sở/images/img_brand_8.png" alt="Converse" />
+                        <img src="../images/img_brand_8.png" alt="Converse" />
                     </div>
                     <!-- Brand 9 -->
                     <div class="brand-logo">
-                        <img src="/web/Thực tập cơ sở/images/img_brand_9.png" alt="Converse" />
+                        <img src="../images/img_brand_9.png" alt="Converse" />
                     </div>
                 </div>
                 
@@ -2255,7 +2261,7 @@
             <div class="max-w-7xl mx-auto py-12 px-2 sm:px-4 lg:px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
                 <!-- Logo & Description - Chiếm 2 cột trên mobile, 1 cột trên desktop -->
                 <div class="space-y-4 md:col-span-2 lg:col-span-1">
-                <img src="/web/Thực tập cơ sở/images/logo.webp" alt="Sudes Sport" class="h-10">
+                <img src="../images/logo.webp" alt="Sudes Sport" class="h-10">
                 <p class="text-gray-300 text-sm leading-relaxed"> <!-- Đổi màu chữ sang xám nhạt -->
                     Sudes Sport - Nhà bán lẻ & phân phối thương hiệu các mặt hàng về thể thao như giày chạy bộ, đồ bơi, kính bơi, giày thể thao, đồ tập gym,... với chất lượng hàng đầu tại Việt Nam.
                 </p>
@@ -2271,11 +2277,11 @@
                 <div>
                 <h4 class="text-lg font-semibold text-white mb-2">LIÊN HỆ</h4> <!-- Đổi màu tiêu đề sang trắng -->
                 <ul class="text-sm text-gray-300 space-y-1"> <!-- Đổi màu chữ sang xám nhạt -->
-                    <li><strong class="text-white">Địa chỉ:</strong> Số 70 Lữ Gia, Phường 15, Quận 11, TP. Hồ Chí Minh</li>
+                    <li><strong class="text-white">Địa chỉ:</strong> Km10, Đường Nguyễn Trãi, Quận Hà Đông, Hà Nội </li>
                     <li><strong class="text-white">Điện thoại:</strong> 1900 6750</li>
                     <li><strong class="text-white">Zalo:</strong> 036 1234 567</li>
                     <li><strong class="text-white">Email:</strong> support@sapo.vn</li>
-                    <li><a href="/web/Thực tập cơ sở/html/anddress.html" class="mt-2 inline-block px-3 py-2 text-white bg-teal-600 hover:bg-teal-500 rounded no-underline">Chuỗi cửa hàng Sudes Sport</a></li> <!-- Thêm no-underline và đổi màu nút -->
+                    <li><a href="../html/anddress.html" class="mt-2 inline-block px-3 py-2 text-white bg-teal-600 hover:bg-teal-500 rounded no-underline">Chuỗi cửa hàng Sudes Sport</a></li> <!-- Thêm no-underline và đổi màu nút -->
                 </ul>
                 </div>
 
@@ -2309,15 +2315,15 @@
                 <div>
                 <h4 class="text-lg font-semibold text-white mb-2">HỖ TRỢ THANH TOÁN</h4> <!-- Đổi màu tiêu đề -->
                 <div class="flex flex-wrap items-center gap-2 mb-4">
-                    <img src="/web/Thực tập cơ sở/images/payment_1.webp" class="h-6" alt="momo">
-                    <img src="/web/Thực tập cơ sở/images/payment_2.webp" class="h-6" alt="zalopay">
-                    <img src="/web/Thực tập cơ sở/images/payment_3.webp" class="h-6" alt="vnpay">
-                    <img src="/web/Thực tập cơ sở/images/payment_4.webp" class="h-6" alt="moca">
-                    <img src="/web/Thực tập cơ sở/images/payment_5.webp" class="h-6" alt="visa">
-                    <img src="/web/Thực tập cơ sở/images/payment_6.webp" class="h-6" alt="atm">
+                    <img src="../images/payment_1.webp" class="h-6" alt="momo">
+                    <img src="../images/payment_2.webp" class="h-6" alt="zalopay">
+                    <img src="../images/payment_3.webp" class="h-6" alt="vnpay">
+                    <img src="../images/payment_4.webp" class="h-6" alt="moca">
+                    <img src="../images/payment_5.webp" class="h-6" alt="visa">
+                    <img src="../images/payment_6.webp" class="h-6" alt="atm">
                 </div>
                 <h4 class="text-lg font-semibold text-white mb-2">ĐƯỢC CHỨNG NHẬN BỞI</h4> <!-- Đổi màu tiêu đề -->
-                <img src="/web/Thực tập cơ sở/images/certifi_1.webp" class="h-10" alt="certified">
+                <img src="../images/certifi_1.webp" class="h-10" alt="certified">
                 </div>
             </div>
         </footer>
@@ -2445,21 +2451,24 @@
     
 
 
-    <script src="/web/Thực tập cơ sở/js/navbar.js"></script>
-    <script src="/web/Thực tập cơ sở/js/banner_slider.js"></script>
-    <script src="/web/Thực tập cơ sở/js/category.js"></script>
-    <script src="/web/Thực tập cơ sở/js/deal.js"></script>
+    <script src="../js/navbar.js"></script>
+    <script src="../js/banner_slider.js"></script>
+    <script src="../js/category.js"></script>
+    <script src="../js/deal.js"></script>
     <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script> -->
-    <script src="/web/Thực tập cơ sở/bootstrap-5.3.6-dist/js/bootstrap.bundle.min.js"></script>
-    <script src="/web/Thực tập cơ sở/js/product.js"></script>
-    <script src="/web/Thực tập cơ sở/js/modal.js"></script>
+    <script src="../bootstrap-5.3.6-dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/product.js"></script>
+    <script src="../js/modal.js"></script>
     
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="/web/Thực tập cơ sở/js/sport-man.js"></script>
-    <script src="/web/Thực tập cơ sở/js/sport-woman.js"></script>
-    <script src="/web/Thực tập cơ sở/js/feedback.js"></script>
-    <script src="/web/Thực tập cơ sở/js/news.js"></script>
-    <script src="/web/Thực tập cơ sở/js/brand.js"></script>
+    <script src="../js/sport-man.js"></script>
+    <script src="../js/sport-woman.js"></script>
+    <script src="../js/feedback.js"></script>
+    <script src="../js/news.js"></script>
+    <script src="../js/brand.js"></script>
+    <script src="../js/demo.js"></script>
+    <!-- <script src="../js/products-data.js"></script> -->
+    
      <!-- tắt cái freflight của talwind đi k nó ảnh hưởng đến img của category -->
     <script>
     tailwind.config = {

@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tất Cả Sản Phẩm</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/themify-icons/0.1.2/css/themify-icons.css">
+    <link rel="stylesheet" href="../bootstrap-5.3.6-dist/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet"> -->
+
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"> -->
+    <link rel="stylesheet" href="../fontawesome-free-6.7.2-web/css/all.css">
+    <link rel="stylesheet" href="../themify-icons/themify-icons.css">
+    <link rel="stylesheet" href="../css/menu.css">
+    <link rel="stylesheet" href="../css/banner.css">
+    <link rel="stylesheet" href="../css/category.css">
+    <link rel="stylesheet" href="../css/deal.css">
+    <link rel="stylesheet" href="../css/product.css">
+    <link rel="stylesheet" href="../css/modal.css">
+    <link rel="stylesheet" href="../css/trending-section.css">
+    <!-- <link rel="stylesheet" href="../css/sportman.css"> -->
+    <link rel="stylesheet" href="../css/banner-sport.css">
+    <link rel="stylesheet" href="../css/feedback.css">
+    <link rel="stylesheet" href="../css/news.css">
+    <link rel="stylesheet" href="../css/brand.css">
+    <link rel="stylesheet" href="../css/footer.css">
+   
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8f9fa;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .page-header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 40px 0;
+            background:  #002d3a;
+            color: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+        }
+
+        .page-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .page-header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        .loading {
+            text-align: center;
+            padding: 60px 20px;
+            color: #667eea;
+        }
+
+        .loading i {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* FILTER SECTION - IMPROVED LAYOUT */
+        .filter-section {
+            background: white;
+            padding: 35px;
+            margin-bottom: 30px;
+            border-radius: 20px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            border: 1px solid #e9ecef;
+        }
+
+        .filter-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #f1f3f4;
+        }
+
+        .filter-title {
+            font-size: 1.6rem;
+            color: #2c3e50;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 600;
+        }
+
+        .filter-title i {
+            color: #667eea;
+            font-size: 1.4rem;
+        }
+
+        .reset-btn {
+            background: linear-gradient(135deg, #dc3545, #c82333);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 4px 15px rgba(220, 53, 69, 0.3);
+        }
+
+        .reset-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(220, 53, 69, 0.4);
+        }
+
+        .filter-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 35px;
+        }
+
+        .filter-column {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .filter-group {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .filter-group label {
+            font-weight: 600;
+            color: #495057;
+            font-size: 15px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .filter-group label i {
+            color: #667eea;
+            font-size: 14px;
+        }
+
+        .filter-group select,
+        .filter-group input[type="text"],
+        .filter-group input[type="number"] {
+            padding: 14px 16px;
+            border: 2px solid #e9ecef;
+            border-radius: 10px;
+            font-size: 15px;
+            transition: all 0.3s ease;
+            background: #fafbfc;
+            font-family: inherit;
+        }
+
+        .filter-group select:focus,
+        .filter-group input:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.1);
+            background: white;
+        }
+
+        /* Price Range Styling */
+        .price-range {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            gap: 12px;
+            align-items: center;
+        }
+
+        .price-range span {
+            text-align: center;
+            font-weight: 600;
+            color: #6c757d;
+        }
+
+        /* Size Filter Styling */
+        .size-filter {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 5px;
+        }
+
+        .size-checkbox {
+            display: none;
+        }
+
+        .size-label {
+            background: #f8f9fa;
+            border: 2px solid #e9ecef;
+            padding: 10px 18px;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 14px;
+            font-weight: 500;
+            color: #495057;
+            min-width: 45px;
+            text-align: center;
+        }
+
+        .size-label:hover {
+            border-color: #667eea;
+            background: #f0f3ff;
+        }
+
+        .size-checkbox:checked + .size-label {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border-color: #667eea;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+        }
+
+        /* Gender Filter Styling */
+        .gender-filter {
+            display: flex;
+            gap: 12px;
+            margin-top: 5px;
+        }
+
+        .gender-checkbox {
+            display: none;
+        }
+
+        .gender-label {
+            background: #f8f9fa;
+            border: 2px solid #e9ecef;
+            padding: 12px 20px;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 14px;
+            font-weight: 500;
+            color: #495057;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex: 1;
+            justify-content: center;
+        }
+
+        .gender-label:hover {
+            border-color: #667eea;
+            background: #f0f3ff;
+        }
+
+        .gender-checkbox:checked + .gender-label {
+            background: linear-gradient(135deg, #28a745, #20c997);
+            color: white;
+            border-color: #28a745;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(40, 167, 69, 0.3);
+        }
+
+        .gender-label i {
+            font-size: 16px;
+        }
+
+        /* Results Header */
+        .results-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+            padding: 20px 25px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            border: 1px solid #e9ecef;
+        }
+
+        .results-count {
+            font-size: 1.2rem;
+            color: #667eea;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .results-count i {
+            color: #28a745;
+        }
+
+        .no-results {
+            text-align: center;
+            padding: 80px 20px;
+            color: #6c757d;
+            background: white;
+            border-radius: 15px;
+            margin: 20px 0;
+        }
+
+        .no-results i {
+            font-size: 4rem;
+            margin-bottom: 25px;
+            color: #dee2e6;
+        }
+
+        .no-results h3 {
+            font-size: 1.6rem;
+            margin-bottom: 15px;
+            color: #495057;
+        }
+
+        .error-message {
+            text-align: center;
+            padding: 50px 20px;
+            background: linear-gradient(135deg, #f8d7da, #f5c6cb);
+            color: #721c24;
+            border-radius: 15px;
+            margin: 20px 0;
+            border: 1px solid #f5c6cb;
+        }
+
+        .error-message i {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .filter-content {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+
+            .page-header {
+                padding: 30px 20px;
+            }
+
+            .page-header h1 {
+                font-size: 2rem;
+            }
+
+            .filter-section {
+                padding: 25px 20px;
+            }
+
+            .filter-header {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 20px;
+            }
+
+            .filter-title {
+                justify-content: center;
+                font-size: 1.4rem;
+            }
+
+            .results-header {
+                flex-direction: column;
+                gap: 15px;
+                text-align: center;
+            }
+
+            .price-range {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+
+            .price-range span {
+                display: none;
+            }
+
+            .gender-filter {
+                flex-direction: column;
+            }
+
+            .size-filter {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .gender-filter {
+                gap: 8px;
+            }
+
+            .gender-label {
+                padding: 10px 15px;
+                font-size: 13px;
+            }
+
+            .size-label {
+                padding: 8px 14px;
+                font-size: 13px;
+            }
+        }
+
+        .fade-in {
+            animation: fadeIn 0.5s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+     
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="page-header">
+            <h1><i class="fas fa-store"></i> Tất Cả Sản Phẩm</h1>
+            <p>Khám phá bộ sưu tập đầy đủ của chúng tôi</p>
+        </div>
+
+        <div class="loading" id="loadingIndicator">
+            <i class="fas fa-spinner"></i>
+            <h3>Đang tải sản phẩm...</h3>
+            <p>Vui lòng đợi trong giây lát</p>
+        </div>
+
+        <div class="filter-section" id="filterSection" style="display: none;">
+            <div class="filter-header">
+                <h2 class="filter-title">
+                    <i class="fas fa-filter"></i>
+                    Bộ Lọc Sản Phẩm
+                </h2>
+                <button class="reset-btn" onclick="resetFilters()">
+                    <i class="fas fa-undo"></i> Đặt Lại
+                </button>
+            </div>
+
+            <div class="filter-content">
+                <div class="filter-column">
+                    <div class="filter-group">
+                        <label><i class="fas fa-search"></i> Tìm kiếm sản phẩm:</label>
+                        <input type="text" id="searchInput" placeholder="Nhập tên sản phẩm...">
+                    </div>
+
+                    <div class="filter-group">
+                        <label><i class="fas fa-tags"></i> Danh mục:</label>
+                        <select id="categoryFilter">
+                            <option value="">Tất cả danh mục</option>
+                        </select>
+                    </div>
+
+                    
+                </div>
+
+                <div class="filter-column">
+                    <div class="filter-group">
+                        <label><i class="fas fa-sort-amount-up"></i> Sắp xếp theo giá:</label>
+                        <select id="sortPrice">
+                            <option value="">Mặc định</option>
+                            <option value="asc">Giá thấp đến cao</option>
+                            <option value="desc">Giá cao đến thấp</option>
+                        </select>
+                    </div>
+
+                    <div class="filter-group">
+                        <label><i class="fas fa-dollar-sign"></i> Khoảng giá:</label>
+                        <div class="price-range">
+                            <input type="number" id="minPrice" placeholder="Giá tối thiểu" min="0">
+                            <span>đến</span>
+                            <input type="number" id="maxPrice" placeholder="Giá tối đa" min="0">
+                        </div>
+                    </div>
+
+                    
+                </div>
+            </div>
+        </div>
+
+        <div class="results-header" id="resultsHeader" style="display: none;">
+            <div class="results-count" id="resultsCount">
+                <i class="fas fa-check-circle"></i>
+                Hiển thị 0 sản phẩm 
+            </div>
+        </div>
+
+        <div class="bestsale-products-wrapper products-grid" id="productsGrid">
+            <!-- Sản phẩm sẽ được load từ trang chính -->
+        </div>
+
+        
+    </div>
+    <!-- Include file JavaScript chứa dữ liệu sản phẩm -->
+    <!-- <script src="products-data.js"></script> -->
+    
+    <script>
+    let allProducts = [];
+    let filteredProducts = [];
+    let allCategories = new Set();
+
+    // Hàm load dữ liệu sản phẩm từ file JavaScript
+    function loadProductsFromData() {
+        try {
+            // Chuyển đổi dữ liệu từ PRODUCTS_DATA
+            allProducts = PRODUCTS_DATA.map(productData => {
+                const product = {
+                    id: productData.id,
+                    title: productData.title,
+                    price: productData.price,
+                    category: productData.category,
+                    html: createProductHTML(productData)
+                };
+
+                // Thu thập categories
+                if (product.category) {
+                    allCategories.add(product.category);
+                }
+
+                return product;
+            });
+
+            if (allProducts.length === 0) {
+                throw new Error('Không có dữ liệu sản phẩm');
+            }
+
+            displayProducts();
+            setupFilters();
+            hideLoading();
+            
+        } catch (error) {
+            console.error('Lỗi khi tải dữ liệu sản phẩm:', error);
+            showError('Không thể tải dữ liệu sản phẩm. Vui lòng kiểm tra file products-data.js');
+        }
+    }
+
+    // Hàm hiển thị sản phẩm
+    function displayProducts() {
+        const productsGrid = document.getElementById('productsGrid');
+        
+        if (filteredProducts.length === 0) {
+            filteredProducts = [...allProducts];
+        }
+
+        productsGrid.innerHTML = filteredProducts.map(product => product.html).join('');
+        
+        // Cập nhật số lượng kết quả
+        updateResultsCount();
+    }
+
+    // Hàm thiết lập bộ lọc
+    function setupFilters() {
+        setupCategoryFilter();
+        setupEventListeners();
+    }
+
+    // Thiết lập bộ lọc danh mục
+    function setupCategoryFilter() {
+        const categoryFilter = document.getElementById('categoryFilter');
+        
+        allCategories.forEach(category => {
+            const option = document.createElement('option');
+            option.value = category;
+            option.textContent = getCategoryDisplayName(category);
+            categoryFilter.appendChild(option);
+        });
+    }
+
+    // Thiết lập event listeners
+    function setupEventListeners() {
+        document.getElementById('searchInput').addEventListener('input', filterProducts);
+        document.getElementById('categoryFilter').addEventListener('change', filterProducts);
+        document.getElementById('sortPrice').addEventListener('change', filterProducts);
+        document.getElementById('minPrice').addEventListener('input', filterProducts);
+        document.getElementById('maxPrice').addEventListener('input', filterProducts);
+    }
+
+    // Hàm lọc sản phẩm
+    function filterProducts() {
+        const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+        const selectedCategory = document.getElementById('categoryFilter').value;
+        const sortPrice = document.getElementById('sortPrice').value;
+        const minPrice = parseInt(document.getElementById('minPrice').value) || 0;
+        const maxPrice = parseInt(document.getElementById('maxPrice').value) || Infinity;
+
+        filteredProducts = allProducts.filter(product => {
+            if (searchTerm && !product.title.toLowerCase().includes(searchTerm)) {
+                return false;
+            }
+
+            if (selectedCategory && product.category !== selectedCategory) {
+                return false;
+            }
+
+            if (product.price < minPrice || product.price > maxPrice) {
+                return false;
+            }
+
+            return true;
+        });
+
+        if (sortPrice === 'asc') {
+            filteredProducts.sort((a, b) => a.price - b.price);
+        } else if (sortPrice === 'desc') {
+            filteredProducts.sort((a, b) => b.price - a.price);
+        }
+
+        displayProducts();
+        toggleNoResults();
+    }
+
+    // Hàm reset bộ lọc
+    function resetFilters() {
+        document.getElementById('searchInput').value = '';
+        document.getElementById('categoryFilter').value = '';
+        document.getElementById('sortPrice').value = '';
+        document.getElementById('minPrice').value = '';
+        document.getElementById('maxPrice').value = '';
+
+        filteredProducts = [...allProducts];
+        displayProducts();
+        toggleNoResults();
+    }
+
+    // Cập nhật số lượng kết quả
+    function updateResultsCount() {
+        const count = filteredProducts.length;
+        document.getElementById('resultsCount').textContent = `Hiển thị ${count} sản phẩm phù hợp với bạn `;
+    }
+
+    // Hiển thị/ẩn thông báo không có kết quả
+    function toggleNoResults() {
+        const noResults = document.getElementById('noResults');
+        const productsGrid = document.getElementById('productsGrid');
+        
+        if (filteredProducts.length === 0) {
+            noResults.style.display = 'block';
+            productsGrid.style.display = 'none';
+        } else {
+            noResults.style.display = 'none';
+            productsGrid.style.display = 'grid';
+        }
+    }
+
+    // Ẩn loading và hiển thị nội dung
+    function hideLoading() {
+        document.getElementById('loadingIndicator').style.display = 'none';
+        document.getElementById('filterSection').style.display = 'block';
+        document.getElementById('resultsHeader').style.display = 'flex';
+    }
+
+    // Hiển thị lỗi
+    function showError(message) {
+        document.getElementById('loadingIndicator').innerHTML = `
+            <div class="error-message">
+                <i class="fas fa-exclamation-triangle"></i>
+                <h3>Có lỗi xảy ra</h3>
+                <p>${message}</p>
+                <button onclick="loadProductsFromData()" style="margin-top: 15px; padding: 10px 20px; background: #667eea; color: white; border: none; border-radius: 5px; cursor: pointer;">
+                    <i class="fas fa-redo"></i> Thử lại
+                </button>
+            </div>
+        `;
+    }
+
+    // Hàm lấy tên hiển thị của danh mục
+    function getCategoryDisplayName(category) {
+        const categoryNames = {
+            'water': 'Đồ bơi',
+            'sports': 'Thể thao',
+            'casual': 'Thường ngày'
+        };
+        return categoryNames[category] || category;
+    }
+
+    // Khởi tạo khi trang load
+    document.addEventListener('DOMContentLoaded', function() {
+        loadProductsFromData();
+    });
+
+    </script>
+
+    
+    <script src="../js/products-data.js"></script>
+</body>
+</html>

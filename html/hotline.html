@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotline Hỗ Trợ - SportShop</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .bg-slider {
+            background-color: #002d3a;
+        }
+        .card-hover {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+        .pulse-animation {
+            animation: pulse 2s infinite;
+        }
+        
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Compact Header -->
+    <header class=" shadow-sm py-3">
+        <div class="container">
+            <div class="flex justify-between items-center">
+                <a href="#" class="text-xl font-bold text-blue-600">
+                    <i class="fas fa-store-alt me-2"></i>SUDES SPORT 
+                </a>
+                <nav class="flex space-x-4">
+                    <a href="#" class="text-gray-600 hover:text-blue-600">Trang chủ</a>
+                    <a href="#" class="text-gray-600 hover:text-blue-600">Sản phẩm</a>
+                    <a href="#" class="text-gray-600 hover:text-blue-600">Khuyến mãi</a>
+                    <a href="#" class="text-blue-600 font-medium">Hỗ trợ</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="bg-slider text-white py-5">
+        <div class="container text-center">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <h1 class="display-5 fw-bold mb-4">
+                        <i class="fas fa-headset me-3 "></i>Hotline Hỗ Trợ
+                    </h1>
+                    <p class="lead mb-4">Chúng tôi luôn sẵn sàng hỗ trợ bạn 24/7 cho mọi thắc mắc về sản phẩm thể thao</p>
+                    <div class="d-flex justify-content-center align-items-center mb-4">
+                        <div class="bg-white text-dark rounded-pill px-4 py-3 pulse-animation">
+                            <i class="fas fa-phone text-success me-2"></i>
+                            <span class="fw-bold fs-3 text-primary">1900 6750</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Methods -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row text-center mb-5">
+                <div class="col-12">
+                    <h2 class="fw-bold text-dark mb-3 fs-4">Các Cách Liên Hệ</h2>
+                    <p class="text-muted">Chọn cách thức liên hệ phù hợp với bạn</p>
+                </div>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card border-0 shadow-sm card-hover h-100">
+                        <div class="card-body text-center p-4">
+                            <div class="bg-success bg-opacity-10 rounded-circle mx-auto mb-3 d-flex align-items-center justify-content-center" style="width: 80px; height: 80px;">
+                                <i class="fas fa-phone-alt fa-2x text-success"></i>
+                            </div>
+                            <h4 class="fw-bold mb-3">Gọi Điện Trực Tiếp</h4>
+                            <p class="text-muted mb-3">Liên hệ ngay để được tư vấn nhanh nhất</p>
+                            <h5 class="text-success fw-bold">1900 6750</h5>
+                            <small class="text-muted">Phí cuộc gọi theo nhà mạng</small>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="card border-0 shadow-sm card-hover h-100">
+                        <div class="card-body text-center p-4">
+                            <div class="bg-primary bg-opacity-10 rounded-circle mx-auto mb-3 d-flex align-items-center justify-content-center" style="width: 80px; height: 80px;">
+                                <i class="fab fa-facebook-messenger fa-2x text-primary"></i>
+                            </div>
+                            <h4 class="fw-bold mb-3">Chat Messenger</h4>
+                            <p class="text-muted mb-3">Nhắn tin qua Facebook Messenger</p>
+                            <button class="btn btn-primary">Chat Ngay</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="card border-0 shadow-sm card-hover h-100">
+                        <div class="card-body text-center p-4">
+                            <div class="bg-info bg-opacity-10 rounded-circle mx-auto mb-3 d-flex align-items-center justify-content-center" style="width: 80px; height: 80px;">
+                                <i class="fas fa-envelope fa-2x text-info"></i>
+                            </div>
+                            <h4 class="fw-bold mb-3">Email</h4>
+                            <p class="text-muted mb-3">Gửi email cho chúng tôi</p>
+                            <p class="text-info fw-bold">support@sudesshop.vn</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Operating Hours & FAQ Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row g-5">
+                <!-- Operating Hours -->
+                <div class="col-lg-6">
+                    <div class="card border-0 shadow-lg h-100">
+                        <div class="card-body p-4">
+                            <div class="text-center mb-4">
+                                <h3 class="fw-bold mb-3">
+                                    <i class="fas fa-clock text-warning me-2"></i>Giờ Hoạt Động
+                                </h3>
+                            </div>
+                            
+                            <div class="mb-4">
+                                <div class="d-flex justify-content-between align-items-center py-2 border-bottom">
+                                    <span class="fw-semibold">Thứ 2 - Thứ 6:</span>
+                                    <span class="text-success">8:00 - 22:00</span>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center py-2 border-bottom">
+                                    <span class="fw-semibold">Thứ 7:</span>
+                                    <span class="text-success">8:00 - 21:00</span>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center py-2 border-bottom">
+                                    <span class="fw-semibold">Chủ nhật:</span>
+                                    <span class="text-success">9:00 - 20:00</span>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-success bg-opacity-10 rounded p-3">
+                                <h6 class="fw-bold text-success mb-2">
+                                    <i class="fas fa-star me-1"></i>Cam kết của chúng tôi:
+                                </h6>
+                                <ul class="list-unstyled mb-0 small">
+                                    <li><i class="fas fa-check-circle text-success me-2"></i>Tư vấn miễn phí</li>
+                                    <li><i class="fas fa-check-circle text-success me-2"></i>Phản hồi trong 30 giây</li>
+                                    <li><i class="fas fa-check-circle text-success me-2"></i>Hỗ trợ chuyên nghiệp</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ Section -->
+                <div class="col-lg-6">
+                    <div class="card border-0 shadow-lg h-100">
+                        <div class="card-body p-4">
+                            <div class="text-center mb-4">
+                                <h3 class="fw-bold mb-3">
+                                    <i class="fas fa-question-circle text-primary me-2"></i>Câu Hỏi Thường Gặp
+                                </h3>
+                            </div>
+                            
+                            <div class="accordion" id="faqAccordion">
+                                <div class="accordion-item mb-3 border-0 shadow-sm">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                                            <i class="fas fa-shipping-fast text-primary me-2"></i>
+                                            Thời gian giao hàng?
+                                        </button>
+                                    </h2>
+                                    <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                        <div class="accordion-body">
+                                            Giao hàng trong vòng 1-3 ngày tại nội thành và 3-7 ngày cho các tỉnh thành khác.
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="accordion-item mb-3 border-0 shadow-sm">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                                            <i class="fas fa-exchange-alt text-warning me-2"></i>
+                                            Chính sách đổi trả?
+                                        </button>
+                                    </h2>
+                                    <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                        <div class="accordion-body">
+                                            Đổi trả trong vòng 30 ngày với điều kiện sản phẩm còn nguyên tem mác.
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="accordion-item mb-3 border-0 shadow-sm">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                                            <i class="fas fa-credit-card text-success me-2"></i>
+                                            Thanh toán hỗ trợ?
+                                        </button>
+                                    </h2>
+                                    <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                        <div class="accordion-body">
+                                            COD, chuyển khoản, ví điện tử và thẻ tín dụng.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between">
+                <div class="mb-6 md:mb-0">
+                    <h3 class="text-xl font-bold mb-4">Sudes Shop</h3>
+                    <p class="text-gray-400">Đồng hành cùng đam mê thể thao của bạn</p>
+                </div>
+                <div class="grid grid-cols-2 gap-8">
+                    <div>
+                        <h4 class="text-lg font-semibold mb-4">Thông tin</h4>
+                        <ul class="space-y-2">
+                            <li><a href="#" class="text-gray-400 hover:text-white">Về chúng tôi</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white">Chính sách bảo mật</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white">Điều khoản dịch vụ</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="text-lg font-semibold mb-4">Hỗ trợ</h4>
+                        <ul class="space-y-2">
+                            <li><a href="#" class="text-gray-400 hover:text-white">Câu hỏi thường gặp</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white">Hướng dẫn mua hàng</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white">Chính sách đổi trả</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>© 2025 Sudes Shop. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

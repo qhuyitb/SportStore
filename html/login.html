@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Đăng Nhập</title>
-      <link rel="stylesheet" href="/web/Thực tập cơ sở/fontawesome-free-6.7.2-web/css/all.css">
-    <link rel="stylesheet" href="/web/Thực tập cơ sở/themify-icons/themify-icons.css">
+      <link rel="stylesheet" href="../fontawesome-free-6.7.2-web/css/all.css">
+    <link rel="stylesheet" href="../themify-icons/themify-icons.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
         
@@ -249,8 +249,8 @@
                 </div>
             </div>
             
-            <button type="submit" class="login-button">ĐĂNG NHẬP</button>
-            
+            <button type="submit" class="login-button" onclick="login()">ĐĂNG NHẬP</button>
+            <!-- đăng nhập hàm login() trong login.js -->
             <div class="social-login">
                 <p>Hoặc đăng nhập bằng</p>
                 <div class="social-icons">
@@ -267,12 +267,17 @@
             </div>
             
             <div class="register-link">
-                Chưa có tài khoản? <a href="/web/Thực tập cơ sở/html/signup.html">Đăng ký ngay</a>
+                Chưa có tài khoản? <a href="../html/signup.html">Đăng ký ngay</a>
+               <!-- <button type="submit" class="login-button" onclick="login()">ĐĂNG NHẬP</button>  -->
             </div>
         </form>
     </div>
     
     <!-- Font Awesome for icons -->
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script src="../js/login.js"></script>
+
 </body>
 </html>
+
+
